@@ -1,0 +1,97 @@
+# Dir
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias p='pwd'
+
+alias o='open .'
+
+# FUCK
+alias fuck='$(thefuck $(fc -ln -1))'
+
+# Python
+alias pweb='python -m SimpleHTTPServer'
+
+# Android
+alias l=pidcat
+alias logcat=pidcat
+alias adb_record="adb shell screenrecord /sdcard/recording.mp4 && adb pull /sdcard/recording.mp4 ~/Desktop/recording.mp4"
+alias adb_screencap="adb shell screencap -p /sdcard/screen.png && adb pull /sdcard/screen.png ~/Desktop/screen.png"
+
+# Git
+alias gut='git'
+alias gl='git pull --prune'
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+alias gp=push_and_set_upstream
+alias gd='git diff'
+alias gc='git commit'
+alias gca='git add --all && git commit -a'
+alias gco='git checkout'
+alias gb='git branch'
+alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
+alias ga='git add --all && gs'
+alias gf='git fetch --prune'
+alias gr='gf && ga && git stash && git pull --rebase && git stash apply'
+alias gup='git remote update -p; git merge --ff-only @{u}'
+alias gh='git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"'
+alias gu='git fetch && git rebase --autostash'
+alias gpr=awesome_pull_request
+
+# Brew
+alias bu='brew update && brew upgrade --all && brew cleanup && brew doctor && brew prune'
+alias bcu='brew cask doctor && brew cask cleanup'
+
+# OS X
+# Dashboard.
+alias osx-disable-dashboard="defaults write com.apple.dashboard mcx-disabled -boolean YES; killall Dock"
+alias osx-enable-dashboard="defaults write com.apple.dashboard mcx-disabled -boolean NO; killall Dock"
+# Apple Key Press Hold.
+alias osx-disable-keyhold="defaults write -g ApplePressAndHoldEnabled -bool false"
+alias osx-enable-keyhold="defaults write -g ApplePressAndHoldEnabled -bool true"
+# Finder Hidden Files
+alias osx-show-hidden-files="defaults write com.apple.finder AppleShowAllFiles -bool YES && killall Finder"
+alias osx-hide-hidden-files="defaults write com.apple.finder AppleShowAllFiles -bool NO && killall Finder"
+
+function awesome_pull_request() {
+  if [[ -n $1 ]]; then
+      branch=$1
+  else
+      branch=master
+  fi
+  hub pull-request -b $branch -o
+}
+
+# Pushes the current branch and sets it to upstream
+function push_and_set_upstream() {
+    git push -u origin "$(git branch | grep '\*' | cut -d ' ' -f 2)"
+}
+
+# Jira....
+function jira() {
+    if [[ -n $1 ]]; then
+        open "https://lyftme.atlassian.net/browse/$1"
+    else
+        open https://lyftme.atlassian.net/issues/\?filter=-1
+    fi
+}
+
+function make-gif() {
+  ffmpeg -i $1 -vf fps=10,scale=480:-1 output.gif
+}
+
+function dex-method-count() {
+  cat $1 | head -c 92 | tail -c 4 | hexdump -e '1/4 "%d\n"'
+}
+
+function dex-method-count-by-package() {
+  dir=$(mktemp -d -t dex)
+  baksmali $1 -o $dir
+  for pkg in `find $dir/* -type d`; do
+    smali $pkg -o $pkg/classes.dex
+    count=$(dex-method-count $pkg/classes.dex)
+    name=$(echo ${pkg:(${#dir} + 1)} | tr '/' '.')
+    echo -e "$count\t$name"
+  done
+  rm -rf $dir
+}
