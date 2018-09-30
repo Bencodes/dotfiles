@@ -15,4 +15,5 @@
     ~/.gitconfig: config/git/gitconfig
     ~/.gitignore_global: config/git/gitignore_global
     ~/.osx: osx
+    ~/.ssh/config: config/ssh/config
 
