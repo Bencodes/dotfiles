@@ -1,0 +1,9 @@
+[submodule "dotbot"]
+	path = dotbot
+	url = git@github.com:anishathalye/dotbot.git
+[submodule "config/nvim/plugins/vim-plug"]
+	path = config/nvim/plugins/vim-plug
+	url = https://github.com/junegunn/vim-plug
+[submodule "config/tmux/plugins/tpm"]
+	path = config/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm

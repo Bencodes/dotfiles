@@ -5,11 +5,6 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias p='pwd'
 
-alias o='open .'
-
-# FUCK
-alias fuck='$(thefuck $(fc -ln -1))'
-
 # Python
 alias pweb='python -m SimpleHTTPServer'
 
@@ -18,6 +13,9 @@ alias l=pidcat
 alias logcat=pidcat
 alias adb_record="adb shell screenrecord /sdcard/recording.mp4 && adb pull /sdcard/recording.mp4 ~/Desktop/recording.mp4"
 alias adb_screencap="adb shell screencap -p /sdcard/screen.png && adb pull /sdcard/screen.png ~/Desktop/screen.png"
+
+# Hub
+alias git=hub
 
 # Git
 alias gut='git'
@@ -34,54 +32,67 @@ alias ga='git add --all && gs'
 alias gf='git fetch --prune'
 alias gr='gf && ga && git stash && git pull --rebase && git stash apply'
 alias gup='git remote update -p; git merge --ff-only @{u}'
-alias gh='git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"'
+alias gh='git for-each-ref --count=20 --sort=-committerdate refs/heads/ --format="%(refname:short)"'
 alias gu='git fetch && git rebase --autostash'
-alias gpr=awesome_pull_request
+alias pr=pull_request
 
 # Brew
-alias bu='brew update && brew upgrade --all && brew cleanup && brew doctor && brew prune'
+alias bu='brew upgrade && brew update --all && brew cleanup && brew doctor && brew prune'
 alias bcu='brew cask doctor && brew cask cleanup'
+alias bcuf='brew cask install $(brew cask list | grep java -v | xargs) --force'
 
-# OS X
-# Dashboard.
-alias osx-disable-dashboard="defaults write com.apple.dashboard mcx-disabled -boolean YES; killall Dock"
-alias osx-enable-dashboard="defaults write com.apple.dashboard mcx-disabled -boolean NO; killall Dock"
-# Apple Key Press Hold.
-alias osx-disable-keyhold="defaults write -g ApplePressAndHoldEnabled -bool false"
-alias osx-enable-keyhold="defaults write -g ApplePressAndHoldEnabled -bool true"
-# Finder Hidden Files
-alias osx-show-hidden-files="defaults write com.apple.finder AppleShowAllFiles -bool YES && killall Finder"
-alias osx-hide-hidden-files="defaults write com.apple.finder AppleShowAllFiles -bool NO && killall Finder"
+# Mainframer
+alias m="mainframer"
 
-function awesome_pull_request() {
-  if [[ -n $1 ]]; then
-      branch=$1
+# Open
+alias o='open .'
+alias st=source_tree
+
+# Opens the current git repo if it exists
+function source_tree() {
+  if [[ -d .git ]]; then
+    open -a SourceTree $("pwd")
   else
-      branch=master
-  fi
-  hub pull-request -b $branch -o
+    open -a SourceTree
+  fi;
+}
+
+function pull_request() {
+  push_and_set_upstream
+  hub pull-request -o -m $1
 }
 
 # Pushes the current branch and sets it to upstream
 function push_and_set_upstream() {
-    git push -u origin "$(git branch | grep '\*' | cut -d ' ' -f 2)"
+  git push -u origin "$(git branch | grep '\*' | cut -d ' ' -f 2)"
 }
 
-# Jira....
-function jira() {
-    if [[ -n $1 ]]; then
-        open "https://lyftme.atlassian.net/browse/$1"
-    else
-        open https://lyftme.atlassian.net/issues/\?filter=-1
-    fi
+function shrug() {
+  clipboard "¯\_(ツ)_/¯"
+}
+
+function mew() {
+  FILE=$HOME/.mews
+  LINE_COUNT=$(cat $FILE | wc -l)
+  RANDOM_LINE=$[$RANDOM % $LINE_COUNT + 1]
+  MEW=$(head -$RANDOM_LINE $FILE | tail -1)
+  clipboard $MEW
+}
+
+function clipboard() {
+  if [[ -n $1 ]]; echo $1 | pbcopy
+}
+
+function make-mp4() {
+  ffmpeg -f gif -i $1 $1.mp4
 }
 
 function make-gif() {
-  ffmpeg -i $1 -vf fps=10,scale=480:-1 output.gif
+  ffmpeg -i $1 -vf fps=10,scale=480:-1 $1.gif
 }
 
 function dex-method-count() {
-  cat $1 | head -c 92 | tail -c 4 | hexdump -e '1/4 "%d\n"'
+  cat $1 | head -c 92 | tail -c 4 | hexdump -e '1/4 "%d"'
 }
 
 function dex-method-count-by-package() {

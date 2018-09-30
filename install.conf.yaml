@@ -1,0 +1,18 @@
+- defaults:
+    link:
+        relink: true
+        create: true
+- clean: ['~', '~/.config', '~/.tmux']
+- link:
+    ~/.config/nvim/init.vim: config/nvim/init.vim
+    ~/.config/nvim/autoload/plug.vim: config/nvim/plugins/vim-plug/plug.vim
+    ~/.config/alacritty/alacritty.yml: config/alacritty/alacritty.yml
+    ~/.tmux.conf: config/tmux/tmux.conf
+    ~/.tmux/plugins/tpm: config/tmux/plugins/tpm
+    ~/.gradle/gradle.properties: config/gradle/gradle.properties
+    ~/.env: env
+    ~/.zshrc: zshrc
+    ~/.gitconfig: config/git/gitconfig
+    ~/.gitignore_global: config/git/gitignore_global
+    ~/.osx: osx
+

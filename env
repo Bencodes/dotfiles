@@ -1,0 +1,45 @@
+# Editing
+editor=nvim
+export EDITOR=$editor
+export VISUAL=$editor
+
+# Neovim
+export XDG_CONFIG_HOME="$HOME/.config/"
+
+# Homebrew Token
+export HOMEBREW_GITHUB_API_TOKEN="5d490da24520f5962060d2f829a1a806cd26b277"
+
+# Homebrew Cask Install Directory
+export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
+
+# PATH
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin
+PATH=/usr/local/bin:$PATH
+PATH=/usr/local/sbin:$PATH
+
+# Lol
+export SKIP_FORMATTING=true
+
+# Rust
+PATH=$PATH:~/.cargo/bin
+
+# Go
+export GOPATH=$HOME/Workspace
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
+# Android
+brew_home=$(brew --prefix)
+export ANDROID_HOME="/usr/local/share/android-sdk"
+export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
+export ANDROID_NDK="/usr/local/share/android-ndk"
+
+# RG
+export RG_DEFAULT_OPTIONS='-S --no-ignore --hidden --follow -g "!tags" -g "!.git/*" -g "!build/" -g "!.okbuck/" -g "!buck-out/"'
+export SKIM_DEFAULT_COMMAND="rg --files $RG_DEFAULT_OPTIONS"
+
+# Java
+export JAVA8_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home" # /usr/libexec/java_home -v 1.8
+export JAVA_HOME=$JAVA8_HOME
+PATH=$JAVA_HOME/bin:$PATH

@@ -1,0 +1,40 @@
+[user]
+  name = Ben
+  email = ben@ben.cm
+[github]
+  user = Bencodes
+[push]
+  default = simple
+[pull]
+  rebase = true
+[fetch]
+  prune = true
+[commit]
+  verbose = true
+[hub]
+  protocol = https
+[rerere]
+  enabled = true
+[rebase]
+  autostash = true
+[core]
+	excludesfile = /Users/blee/.gitignore_global
+  editor = nvim
+[grep]
+  LineNumber = true
+[merge]
+  tool = vimdiff
+[mergetool]
+  prompt = true
+[mergetool "vimdiff"]
+  cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[difftool]
+  prompt = false
+[diff]
+  tool = vimdiff
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Users/blee/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

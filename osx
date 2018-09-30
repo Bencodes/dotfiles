@@ -1,0 +1,20 @@
+# Dashboard.
+alias osx-disable-dashboard="defaults write com.apple.dashboard mcx-disabled -boolean YES; killall Dock"
+alias osx-enable-dashboard="defaults write com.apple.dashboard mcx-disabled -boolean NO; killall Dock"
+
+# Apple Key Press Hold.
+alias osx-disable-keyhold="defaults write -g ApplePressAndHoldEnabled -bool false"
+alias osx-enable-keyhold="defaults write -g ApplePressAndHoldEnabled -bool true"
+
+# Finder Hidden Files
+alias osx-show-hidden-files="defaults write com.apple.finder AppleShowAllFiles -bool YES && killall Finder"
+alias osx-hide-hidden-files="defaults write com.apple.finder AppleShowAllFiles -bool NO && killall Finder"
+
+# iTerm
+alias osx-hide-iterm-icon="/usr/libexec/PlistBuddy -c 'Add :LSUIElement bool true' /Applications/iTerm.app/Contents/Info.plist"
+alias osx-show-iterm-icon="/usr/libexec/PlistBuddy -c 'Delete :LSUIElement' /Applications/iTerm.app/Contents/Info.plist"
+
+# Space Reordering
+alias osx-enable-automatic-space-ordering="defaults write com.apple.dock mru-spaces -bool false"
+alias osx-disable-automatic-space-ordering="defaults write com.apple.dock mru-spaces -bool false"
+
