@@ -38,8 +38,7 @@ alias pr=pull_request
 
 # Brew
 alias bu='brew upgrade && brew update --all && brew cleanup && brew doctor && brew prune'
-alias bcu='brew cask doctor && brew cask cleanup'
-alias bcuf='brew cask install $(brew cask list | grep java -v | xargs) --force'
+alias bcu='brew cask doctor && brew cleanup'
 
 # Mainframer
 alias m="mainframer"
