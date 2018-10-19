@@ -17,6 +17,8 @@ call plug#begin()
   Plug 'keith/swift.vim'
   Plug 'vim-syntastic/syntastic'
 
+  Plug 'jremmen/vim-ripgrep'
+
   Plug 'vbundles/nerdtree'
   Plug 'scrooloose/nerdtree'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
