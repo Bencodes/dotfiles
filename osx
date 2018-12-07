@@ -1,20 +1,99 @@
-# Dashboard.
-alias osx-disable-dashboard="defaults write com.apple.dashboard mcx-disabled -boolean YES; killall Dock"
-alias osx-enable-dashboard="defaults write com.apple.dashboard mcx-disabled -boolean NO; killall Dock"
+#!/bin/bash
 
-# Apple Key Press Hold.
-alias osx-disable-keyhold="defaults write -g ApplePressAndHoldEnabled -bool false"
-alias osx-enable-keyhold="defaults write -g ApplePressAndHoldEnabled -bool true"
+##############################################
+# UI
+##############################################
 
-# Finder Hidden Files
-alias osx-show-hidden-files="defaults write com.apple.finder AppleShowAllFiles -bool YES && killall Finder"
-alias osx-hide-hidden-files="defaults write com.apple.finder AppleShowAllFiles -bool NO && killall Finder"
+# Always show scrollbars
+defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 
-# iTerm
-alias osx-hide-iterm-icon="/usr/libexec/PlistBuddy -c 'Add :LSUIElement bool true' /Applications/iTerm.app/Contents/Info.plist"
-alias osx-show-iterm-icon="/usr/libexec/PlistBuddy -c 'Delete :LSUIElement' /Applications/iTerm.app/Contents/Info.plist"
+# Dark UI
+defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
 
-# Space Reordering
-alias osx-enable-automatic-space-ordering="defaults write com.apple.dock mru-spaces -bool false"
-alias osx-disable-automatic-space-ordering="defaults write com.apple.dock mru-spaces -bool false"
+# Battery percent
+defaults write com.apple.menuextra.battery ShowPercent -bool true
 
+
+
+##############################################
+# Keyboard
+##############################################
+
+# Disable press-and-hold for keys in favor of key repeat
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+# Set a blazingly fast keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
+
+
+
+##############################################
+# Finder
+##############################################
+
+# Disable animations
+defaults write com.apple.finder DisableAllAnimations -bool false
+
+# Show filename extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# Show Status bar in Finder
+defaults write com.apple.finder ShowStatusBar -bool true
+
+# Show Path bar in Finder
+defaults write com.apple.finder ShowPathbar -bool true
+
+# Use column view in all Finder windows by default
+# Four-letter codes for the other view modes: 'icnv', 'clmv', 'Flwv', 'Nlsv'
+defaults write com.apple.finder FXPreferredViewStyle -string clmv
+
+# Disable the warning when changing a file extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+
+##############################################
+# Dock
+##############################################
+
+# Set the icon size of Dock items to 36 pixels
+defaults write com.apple.dock tilesize -int 36
+
+# Disable dock magification
+defaults write com.apple.dock magnification -bool false
+
+# Put the dock on left side
+defaults write com.apple.dock orientation -string "right"
+
+# Automatically hide and show the Dock
+defaults write com.apple.dock autohide -bool true
+
+# Disable the show recents
+defaults write com.apple.dock show-recents -bool false
+
+# Change the auto-hiding Dock delay
+defaults write com.apple.dock autohide-delay -float 0.0
+defaults write com.apple.dock autohide-time-modifier -float 0.0
+
+# Show indicator lights for open applications in the Dock
+defaults write com.apple.dock show-process-indicators -bool true
+
+# Make Dock icons of hidden applications translucent
+defaults write com.apple.dock showhidden -bool true
+
+# Dock tweaks
+defaults write com.apple.dock mouse-over-hilte-stack -bool true
+
+
+
+##############################################
+# Firewall
+# 0=off, 1=on, 2=on for essential service
+##############################################
+
+# Enable the firewall
+sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 1
+# Enable Stealth mode.
+sudo defaults write /Library/Preferences/com.apple.alf stealthenabled -int 1
+# Enable Firewall logging.
+sudo defaults write /Library/Preferences/com.apple.alf loggingenabled -int 1
