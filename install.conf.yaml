@@ -11,6 +11,7 @@
     ~/.tmux/plugins/tpm: config/tmux/plugins/tpm
     ~/.gradle/gradle.properties: config/gradle/gradle.properties
     ~/.env: env
+    ~/.aliases: aliases
     ~/.zshrc: zshrc
     ~/.gitconfig: config/git/gitconfig
     ~/.gitignore_global: config/git/gitignore_global
