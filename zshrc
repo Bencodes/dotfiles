@@ -4,7 +4,6 @@ fi
 
 source ~/.env
 source ~/.aliases
-source ~/.osx
 
 # Install everything using antigen
 source $(brew --prefix)/share/antigen/antigen.zsh
