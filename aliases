@@ -45,16 +45,6 @@ alias m="mainframer"
 
 # Open
 alias o='open .'
-alias st=source_tree
-
-# Opens the current git repo if it exists
-function source_tree() {
-  if [[ -d .git ]]; then
-    open -a SourceTree $("pwd")
-  else
-    open -a SourceTree
-  fi;
-}
 
 function pull_request() {
   push_and_set_upstream
@@ -66,42 +56,10 @@ function push_and_set_upstream() {
   git push -u origin "$(git branch | grep '\*' | cut -d ' ' -f 2)"
 }
 
-function shrug() {
-  clipboard "¯\_(ツ)_/¯"
-}
-
-function mew() {
-  FILE=$HOME/.mews
-  LINE_COUNT=$(cat $FILE | wc -l)
-  RANDOM_LINE=$[$RANDOM % $LINE_COUNT + 1]
-  MEW=$(head -$RANDOM_LINE $FILE | tail -1)
-  clipboard $MEW
-}
-
-function clipboard() {
-  if [[ -n $1 ]]; echo $1 | pbcopy
-}
-
 function make-mp4() {
   ffmpeg -f gif -i $1 $1.mp4
 }
 
 function make-gif() {
   ffmpeg -i $1 -vf fps=10,scale=480:-1 $1.gif
-}
-
-function dex-method-count() {
-  cat $1 | head -c 92 | tail -c 4 | hexdump -e '1/4 "%d"'
-}
-
-function dex-method-count-by-package() {
-  dir=$(mktemp -d -t dex)
-  baksmali $1 -o $dir
-  for pkg in `find $dir/* -type d`; do
-    smali $pkg -o $pkg/classes.dex
-    count=$(dex-method-count $pkg/classes.dex)
-    name=$(echo ${pkg:(${#dir} + 1)} | tr '/' '.')
-    echo -e "$count\t$name"
-  done
-  rm -rf $dir
 }

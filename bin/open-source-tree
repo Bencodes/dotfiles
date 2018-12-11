@@ -1,0 +1,12 @@
+#!/bin/sh
+
+alias st=source_tree
+
+# Opens the current git repo if it exists
+function source_tree() {
+  if [[ -d .git ]]; then
+    open -a SourceTree $("pwd")
+  else
+    open -a SourceTree
+  fi;
+}

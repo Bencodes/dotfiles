@@ -1,0 +1,5 @@
+#!/bin/sh
+
+function shrug() {
+  clipboard "¯\_(ツ)_/¯"
+}
