@@ -1,5 +1,4 @@
 brew "advancecomp"
-brew "antigen"
 brew "apktool"
 brew "autoconf"
 brew "automake"
