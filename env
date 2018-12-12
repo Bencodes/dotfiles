@@ -1,7 +1,15 @@
+
 # Editing
 editor=nvim
 export EDITOR=$editor
 export VISUAL=$editor
+
+# Rust
+CARGO_HOME=$HOME/.cargo
+
+# Go
+export GOPATH=$HOME/Workspace
+export GOROOT=/usr/local/opt/go/libexeca
 
 # Neovim
 export XDG_CONFIG_HOME="$HOME/.config/"
@@ -12,34 +20,45 @@ export HOMEBREW_GITHUB_API_TOKEN="5d490da24520f5962060d2f829a1a806cd26b277"
 # Homebrew Cask Install Directory
 export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
 
-# PATH
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin
-PATH=/usr/local/bin:$PATH
-PATH=/usr/local/sbin:$PATH
+# No homebrew analytics
+export HOMEBREW_NO_ANALYTICS=1
 
-# Lol
+# Skip auto formatting
 export SKIP_FORMATTING=true
 
-# Rust
-PATH=$PATH:~/.cargo/bin
-
-# Go
-export GOPATH=$HOME/Workspace
-export GOROOT=/usr/local/opt/go/libexec
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
+# Java
+export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 
 # Android
-brew_home=$(brew --prefix)
 export ANDROID_HOME="/usr/local/share/android-sdk"
 export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
 export ANDROID_NDK="/usr/local/share/android-ndk"
 
 # RG
 export RG_DEFAULT_OPTIONS='-S --no-ignore --hidden --follow -g "!tags" -g "!.git/*" -g "!build/" -g "!.okbuck/" -g "!buck-out/"'
-export SKIM_DEFAULT_COMMAND="rg --files $RG_DEFAULT_OPTIONS"
 
-# Java
-export JAVA8_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home" # /usr/libexec/java_home -v 1.8
-export JAVA_HOME=$JAVA8_HOME
-PATH=$JAVA_HOME/bin:$PATH
+# Skim https://github.com/lotabout/skim
+export SKIM_DEFAULT_COMMAND="fd"
+
+# Configure the paths
+paths=(
+  /usr/local/bin                # Homebrew
+  /usr/local/sbin               
+  $CARGO_HOME/bin               # Rust
+  $JAVA_HOME/bin                # Java
+  $HOME/.bin                    # User
+  /usr/bin                      # System
+  /usr/sbin
+  /usr/bin
+  /bin
+  /usr/sbin
+  /sbin
+)
+
+for search_path in ${paths[@]}; do
+  [[ -d $search_path ]] \
+  && [[ $PATH != *$search_path* ]] \
+  && PATH=$search_path:$PATH
+done
+
+export PATH
