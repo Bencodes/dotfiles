@@ -2,10 +2,13 @@
     link:
         relink: true
         create: true
-- clean: ['~', '~/.config', '~/.tmux']
+- clean: ['~', '~/.config', '~/.tmux ~/.bin']
 - link:
     ~/.config/nvim/init.vim: config/nvim/init.vim
     ~/.config/nvim/autoload/plug.vim: config/nvim/plugins/vim-plug/plug.vim
+    ~/.config/zsh/:
+      glob: true
+      path: config/zsh/*
     ~/.config/alacritty/alacritty.yml: config/alacritty/alacritty.yml
     ~/.tmux.conf: config/tmux/tmux.conf
     ~/.tmux/plugins/tpm: config/tmux/plugins/tpm
@@ -13,6 +16,7 @@
     ~/.env: env
     ~/.aliases: aliases
     ~/.zshrc: zshrc
+    ~/.bin: bin
     ~/.gitconfig: config/git/gitconfig
     ~/.gitignore_global: config/git/gitignore_global
     ~/.ssh/config: config/ssh/config
