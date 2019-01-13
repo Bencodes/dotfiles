@@ -6,14 +6,16 @@
 - link:
     ~/.config/nvim/init.vim: config/nvim/init.vim
     ~/.config/nvim/autoload/plug.vim: config/nvim/plugins/vim-plug/plug.vim
-    ~/.config/zsh/:
-      glob: true
-      path: config/zsh/*
+    ~/.config/zsh/init.zsh: config/zsh/init.zsh
+    ~/.gnupg/gpg-agent.conf: config/gnupg/gpg-agent.conf
+    ~/.gnupg/gpg.conf: config/gnupg/gpg.conf
+    ~/.config/zsh/antigen/antigen.zsh: config/zsh/antigen/antigen.zsh
     ~/.config/alacritty/alacritty.yml: config/alacritty/alacritty.yml
     ~/.tmux.conf: config/tmux/tmux.conf
     ~/.tmux/plugins/tpm: config/tmux/plugins/tpm
     ~/.gradle/gradle.properties: config/gradle/gradle.properties
     ~/.env: env
+    ~/.paths: paths
     ~/.aliases: aliases
     ~/.zshrc: zshrc
     ~/.bin: bin
