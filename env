@@ -1,11 +1,7 @@
-
 # Editing
 editor=nvim
 export EDITOR=$editor
 export VISUAL=$editor
-
-# Rust
-CARGO_HOME=$HOME/.cargo
 
 # Go
 export GOPATH=$HOME/Workspace
@@ -26,9 +22,6 @@ export HOMEBREW_NO_ANALYTICS=1
 # Skip auto formatting
 export SKIP_FORMATTING=true
 
-# Java
-export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
-
 # Android
 export ANDROID_HOME="/usr/local/share/android-sdk"
 export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
@@ -40,25 +33,7 @@ export RG_DEFAULT_OPTIONS='-S --no-ignore --hidden --follow -g "!tags" -g "!.git
 # Skim https://github.com/lotabout/skim
 export SKIM_DEFAULT_COMMAND="fd"
 
-# Configure the paths
-paths=(
-  /usr/local/bin                # Homebrew
-  /usr/local/sbin               
-  $CARGO_HOME/bin               # Rust
-  $JAVA_HOME/bin                # Java
-  $HOME/.bin                    # User
-  /usr/bin                      # System
-  /usr/sbin
-  /usr/bin
-  /bin
-  /usr/sbin
-  /sbin
-)
-
-for search_path in ${paths[@]}; do
-  [[ -d $search_path ]] \
-  && [[ $PATH != *$search_path* ]] \
-  && PATH=$search_path:$PATH
-done
-
-export PATH
+# GPG Agent
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
