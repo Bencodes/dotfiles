@@ -2,8 +2,9 @@
 
 source $(dirname ${(%):-%x})/antigen/antigen.zsh
 
+source ~/.config/zsh/antigen/antigen.zsh
+
 antigen use oh-my-zsh
-antigen bundle git
 antigen bundle adb
 antigen bundle brew
 antigen bundle github
