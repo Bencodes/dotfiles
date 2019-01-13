@@ -1,6 +1,7 @@
 [user]
-  name = Ben
-  email = ben@ben.cm
+  name = Benjamin Lee
+	email = ben@ben.cm
+	signingkey = A4860BE41132A04C
 [github]
   user = Bencodes
 [push]
@@ -11,6 +12,7 @@
   prune = true
 [commit]
   verbose = true
+	gpgsign = true
 [hub]
   protocol = https
 [rerere]
@@ -38,3 +40,5 @@
 [mergetool "sourcetree"]
 	cmd = /Users/blee/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[gpg]
+	program = gpg
