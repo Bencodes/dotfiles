@@ -1,11 +1,15 @@
 cask_args appdir: "~/Applications"
 
 cask "1password"
+cask "authy"
+cask "evernote"
+cask "slack"
+cask "telegram"
 cask "alacritty"
 cask "android-ndk"
 cask "android-platform-tools"
 cask "android-sdk"
-cask "firefox"
+cask "firefox", args: { appdir: "/Applications" }
 cask "java"
 cask "java6"
 cask "java8"
