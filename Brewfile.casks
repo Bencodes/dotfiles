@@ -1,19 +1,19 @@
 cask_args appdir: "~/Applications"
 
-cask "1password"
+cask "1password", args: { appdir: "/Applications" }
+cask "firefox", args: { appdir: "/Applications" }
+cask "viscosity", args: { appdir: "/Applications" }
+cask "alacritty"
 cask "authy"
 cask "evernote"
 cask "slack"
 cask "telegram"
-cask "alacritty"
 cask "android-ndk"
 cask "android-platform-tools"
 cask "android-sdk"
-cask "firefox", args: { appdir: "/Applications" }
 cask "java"
 cask "java6"
 cask "java8"
 cask "little-snitch"
 cask "micro-snitch"
 cask "spotify"
-cask "viscosity"
