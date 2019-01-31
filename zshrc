@@ -10,3 +10,4 @@ source ~/.paths
 source ~/.env
 source ~/.aliases
 source ~/.config/zsh/init.zsh
+source '/Users/blee/Projects/blessclient/lyftprofile' # bless ssh alias
