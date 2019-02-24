@@ -7,7 +7,7 @@
 [push]
   default = simple
 [pull]
-  rebase = true
+	rebase = true
 [fetch]
   prune = true
 [commit]
@@ -42,3 +42,5 @@
 	trustExitCode = true
 [gpg]
 	program = gpg
+[branch "master"]
+	pushRemote = NOPE
