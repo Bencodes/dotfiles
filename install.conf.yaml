@@ -2,7 +2,7 @@
     link:
         relink: true
         create: true
-- clean: ['~', '~/.config', '~/.tmux ~/.bin']
+- clean: ['~', '~/.config', '~/.tmux', '~/.bin']
 - link:
     ~/.config/nvim/init.vim: config/nvim/init.vim
     ~/.config/nvim/autoload/plug.vim: config/nvim/plugins/vim-plug/plug.vim
