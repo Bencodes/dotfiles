@@ -21,6 +21,3 @@ brew tap homebrew/bundle
 brew bundle --file=$BASEDIR/Brewfile.taps
 brew bundle --file=$BASEDIR/Brewfile.brews
 brew bundle --file=$BASEDIR/Brewfile.casks
-
-# Install the OSX configuration
-./osx
