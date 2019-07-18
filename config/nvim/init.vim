@@ -59,6 +59,7 @@ set ts=2 sts=2 sw=2
 set whichwrap+=<,>,h,l,[,]
 set noerrorbells
 set mouse=a
+set spell spelllang=en_us
 
 " Mappings
 map <C-o> :NERDTreeToggle<CR>
