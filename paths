@@ -4,6 +4,9 @@ export CARGO_HOME=$HOME/.cargo
 # Java
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 
+# Java
+export KOTLIN_HOME="/usr/local/opt/kotlin/"
+
 # Configure the paths
 paths=(
   /usr/local/bin                # Homebrew
