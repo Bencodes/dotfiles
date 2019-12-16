@@ -10,6 +10,9 @@ export GOROOT=/usr/local/opt/go/libexeca
 # Neovim
 export XDG_CONFIG_HOME="$HOME/.config/"
 
+# RipGrep
+RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/rgrc.conf"
+
 # Homebrew Token
 export HOMEBREW_GITHUB_API_TOKEN="5d490da24520f5962060d2f829a1a806cd26b277"
 
@@ -26,9 +29,6 @@ export SKIP_FORMATTING=true
 export ANDROID_HOME="/usr/local/share/android-sdk"
 export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
 export ANDROID_NDK="/usr/local/share/android-ndk"
-
-# RG
-export RG_DEFAULT_OPTIONS='-S --no-ignore --hidden --follow -g "!tags" -g "!.git/*" -g "!build/" -g "!.okbuck/" -g "!buck-out/"'
 
 # Skim https://github.com/lotabout/skim
 export SKIM_DEFAULT_COMMAND="fd"
