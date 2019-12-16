@@ -20,6 +20,7 @@ alias git=hub
 # Git
 alias g='git'
 alias gut='git'
+alias gaa='git add --all'
 alias gl='git pull --prune'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gp=push_and_set_upstream
