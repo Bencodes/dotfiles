@@ -7,6 +7,8 @@
     ~/.config/nvim/init.vim: config/nvim/init.vim
     ~/.config/nvim/autoload/plug.vim: config/nvim/plugins/vim-plug/plug.vim
     ~/.config/zsh/init.zsh: config/zsh/init.zsh
+    ~/.config/zsh/theme.zsh: config/zsh/theme.zsh
+    ~/.config/ripgrep/rgrc.conf: config/ripgrep/rgrc.conf
     ~/.gnupg/gpg-agent.conf: config/gnupg/gpg-agent.conf
     ~/.gnupg/gpg.conf: config/gnupg/gpg.conf
     ~/.config/zsh/antigen/antigen.zsh: config/zsh/antigen/antigen.zsh

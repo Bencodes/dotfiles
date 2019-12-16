@@ -1,8 +1,7 @@
 #!/usr/bin/env zsh
 
 source $(dirname ${(%):-%x})/antigen/antigen.zsh
-
-source ~/.config/zsh/antigen/antigen.zsh
+source ~/.config/zsh/theme.zsh
 
 antigen use oh-my-zsh
 antigen bundle adb
