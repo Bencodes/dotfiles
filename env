@@ -38,6 +38,6 @@ export BUCK_IML_NO_R_FILES=true
 export BUCK_IML_NO_GEN_CODE=true
 
 # GPG Agent
-#export GPG_TTY="$(tty)"
-#export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-#gpgconf --launch gpg-agent
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
