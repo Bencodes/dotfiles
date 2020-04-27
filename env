@@ -33,6 +33,10 @@ export ANDROID_NDK="/usr/local/share/android-ndk"
 # Skim https://github.com/lotabout/skim
 export SKIM_DEFAULT_COMMAND="fd"
 
+# Lyft specific infra
+export BUCK_IML_NO_R_FILES=true
+export BUCK_IML_NO_GEN_CODE=true
+
 # GPG Agent
 #export GPG_TTY="$(tty)"
 #export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
