@@ -62,6 +62,16 @@ scrolling:
   # Scroll to the bottom when new text is written to the terminal.
   auto_scroll: false
 
+# Any items in the `env` entry below will be added as
+# environment variables. Some entries may override variables
+# set by alacritty it self.
+env:
+  # TERM env customization. Default is xterm-256color
+  # Note: the default TERM value `xterm-256color` does not
+  # specify all features alacritty supports. This does pose
+  # a few issues with programs relying on terminfo and the
+  # `tput` command
+  TERM: xterm-256color
 
 window:
   # Window dimensions (changes require restart)
@@ -97,6 +107,9 @@ window:
   #     - buttonless: Title bar, transparent background and title bar buttons
   #     - transparent: Title bar, transparent background, but no title bar buttons
   decorations: full
+
+  # Start in full screen mode
+  startup_mode: Maximized
 
 # Colors (Dracula)
 colors:
