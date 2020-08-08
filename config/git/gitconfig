@@ -12,7 +12,7 @@
   prune = true
 [commit]
   verbose = true
-	gpgsign = true
+	gpgsign = false
 [hub]
   protocol = https
 [rerere]
