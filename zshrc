@@ -11,3 +11,4 @@ source ~/.env
 source ~/.aliases
 source ~/.config/zsh/init.zsh
 source '/Users/blee/Projects/blessclient/lyftprofile' # bless ssh alias
+eval "$(starship init zsh)"
