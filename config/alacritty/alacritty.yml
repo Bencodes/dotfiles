@@ -59,9 +59,6 @@ scrolling:
   # scrollback is enabled (history > 0).
   multiplier: 3
 
-  # Scroll to the bottom when new text is written to the terminal.
-  auto_scroll: false
-
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty it self.
