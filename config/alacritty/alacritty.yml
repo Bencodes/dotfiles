@@ -41,7 +41,7 @@ debug:
 # The value `0.0` is completely transparent and `1.0` is opaque.
 background_opacity: 1.0
 
-visual_bell:
+bell:
   duration: 0
 
 scrolling:
