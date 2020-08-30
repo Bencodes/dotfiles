@@ -10,6 +10,10 @@ call plug#begin()
   Plug 'dracula/vim'
   Plug 'rakr/vim-one'
   Plug 'vim-airline/vim-airline'
+
+  " Bazel
+  Plug 'google/vim-maktaba'
+  Plug 'bazelbuild/vim-bazel'
   
   " Code Navigation
   Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
