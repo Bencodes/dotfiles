@@ -14,6 +14,7 @@ call plug#begin()
   " Bazel
   Plug 'google/vim-maktaba'
   Plug 'bazelbuild/vim-bazel'
+  Plug 'bazelbuild/vim-ft-bzl'
   
   " Code Navigation
   Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
