@@ -1,3 +1,6 @@
+# shellcheck shell=bash
+# shellcheck disable=SC2034  # Unused variables left for readability
+
 # ORDER
 SPACESHIP_PROMPT_ORDER=(
   time     #
