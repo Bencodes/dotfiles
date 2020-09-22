@@ -18,6 +18,6 @@ git submodule update --init --recursive --quiet
 
 # Install the homebrew dependencies
 brew tap homebrew/bundle
-brew bundle --file=$BASEDIR/Brewfile.taps
-brew bundle --file=$BASEDIR/Brewfile.brews
-brew bundle --file=$BASEDIR/Brewfile.casks
+brew bundle --file="$BASEDIR"/Brewfile.taps
+brew bundle --file="$BASEDIR"/Brewfile.brews
+brew bundle --file="$BASEDIR"/Brewfile.casks
