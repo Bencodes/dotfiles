@@ -11,8 +11,12 @@ fi
 source "$BASEDIR"/.paths
 source "$BASEDIR"/.env
 source "$BASEDIR"/.aliases
-source "$BASEDIR"/.zshlyftrc
 source "$BASEDIR"/.config/zsh/init.zsh
+
+# Optionally load zshlyftrc
+if [ -f "$BASEDIR"/.zshlyftrc ]; then
+  source "$BASEDIR"/.zshlyftrc
+fi
 
 # Init starship
 eval "$(starship init zsh)"
