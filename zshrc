@@ -8,15 +8,15 @@ if (( ! ${fpath[(I)/usr/local/share/zsh/site-functions]} )); then
   FPATH=/usr/local/share/zsh/site-functions:$FPATH
 fi
 
-source "$BASEDIR"/.paths
-source "$BASEDIR"/.env
-source "$BASEDIR"/.aliases
-source "$BASEDIR"/.config/zsh/init.zsh
+source ~/.paths
+source ~/.env
+source ~/.aliases
+source ~/.config/zsh/init.zsh
 
 # Optionally load zshlyftrc
-if [ -f "$BASEDIR"/.zshlyftrc ]; then
-  source "$BASEDIR"/.zshlyftrc
+if [ -f ~/.zshlyftrc ]; then
+  source ~/.zshlyftrc
 fi
 
-# Init starship
+# Init starshipz
 eval "$(starship init zsh)"
