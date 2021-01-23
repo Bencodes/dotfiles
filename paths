@@ -9,6 +9,7 @@ export KOTLIN_HOME="/usr/local/opt/kotlin/"
 
 # Configure the paths
 paths=(
+  /opt/homebrew/bin             # Homebrew
   /usr/local/bin                # Homebrew
   /usr/local/sbin               
   $CARGO_HOME/bin               # Rust
