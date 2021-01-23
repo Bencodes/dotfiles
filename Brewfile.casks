@@ -2,28 +2,21 @@ cask_args appdir: "~/Applications"
 
 cask "1password", args: { appdir: "/Applications" }
 cask "firefox", args: { appdir: "/Applications" }
-cask "google-chrome", args: { appdir: "/Applications" }
 cask "viscosity", args: { appdir: "/Applications" }
+cask "little-snitch", args: { appdir: "/Applications" }
+cask "micro-snitch", args: { appdir: "/Applications" }
 cask "alacritty"
 cask "authy"
 cask "docker"
-cask "evernote"
 cask "slack"
 cask "telegram"
+cask "signal"
+cask "whatsapp"
 cask "android-ndk"
 cask "android-platform-tools"
 cask "android-sdk"
 cask "android-studio"
-cask "android-studio-preview"
-cask "java"
-cask "java6"
-cask "java8"
-cask "java10"
-cask "java11"
-cask "little-snitch"
-cask "micro-snitch"
+cask "intellij-idea-ce"
 cask "spotify"
 cask "sourcetree"
-cask "trello"
-cask "gephi"
 cask "visual-studio-code"
