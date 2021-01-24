@@ -198,12 +198,14 @@ key_bindings:
   - { key: Delete,                  chars: "\x1b[3~"                     }
   - { key: Left,     mods: Shift,   chars: "\x1b[1;2D"                   }
   - { key: Left,     mods: Control, chars: "\x1b[1;5D"                   }
-  - { key: Left,     mods: Alt,     chars: "\x1b[1;3D"                   }
+  # Disabled and replaced with a working solution for work jumping at the bottom
+  # - { key: Left,     mods: Alt,     chars: "\x1b[1;3D"                   }
   - { key: Left,                    chars: "\x1b[D",   mode: ~AppCursor  }
   - { key: Left,                    chars: "\x1bOD",   mode: AppCursor   }
   - { key: Right,    mods: Shift,   chars: "\x1b[1;2C"                   }
   - { key: Right,    mods: Control, chars: "\x1b[1;5C"                   }
-  - { key: Right,    mods: Alt,     chars: "\x1b[1;3C"                   }
+  # Disabled and replaced with a working solution for work jumping at the bottom
+  # - { key: Right,    mods: Alt,     chars: "\x1b[1;3C"                   }
   - { key: Right,                   chars: "\x1b[C",   mode: ~AppCursor  }
   - { key: Right,                   chars: "\x1bOC",   mode: AppCursor   }
   - { key: Up,       mods: Shift,   chars: "\x1b[1;2A"                   }
@@ -277,6 +279,13 @@ key_bindings:
   - { key: F11,      mods: Command, chars: "\x1b[23;3~"                  }
   - { key: F12,      mods: Command, chars: "\x1b[24;3~"                  }
   - { key: NumpadEnter,             chars: "\n"                          }
+  # Personal Edits
+  # Jump words + Jump end/start
+  - { key: Left,     mods: Alt,     chars: "\x1bb"                       } # Jump Word Left
+  - { key: Right,    mods: Alt,     chars: "\x1bf"                       } # Jump Word Right
+  - { key: Left,     mods: Command, chars: "\x1bOH",   mode: AppCursor   } # Home
+  - { key: Right,    mods: Command, chars: "\x1bOF",   mode: AppCursor   } # End
+  # Tmux specific overrides for Apple-like navigation
   - { key: N,    mods: Command, command: { program: "/opt/homebrew/bin/tmux", args: ["new-window", "/opt/homebrew/bin/zsh"] } } # The new Alacritty supports multi window using command + N
   - { key: T,    mods: Command, command: { program: "/opt/homebrew/bin/tmux", args: ["new-window", "/opt/homebrew/bin/zsh"] } }
   - { key: W,    mods: Command, command: { program: "/opt/homebrew/bin/tmux", args: ["kill-pane"] } }
