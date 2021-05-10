@@ -1,7 +1,7 @@
 add_newline = true
 
 [character]
-symbol = "➜"
+success_symbol = "➜"
 
 [git_status]
 disabled = true
