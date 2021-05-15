@@ -12,6 +12,7 @@
     ~/.config/starship.toml: config/starship/starship.toml
     ~/.gnupg/gpg-agent.conf: config/gnupg/gpg-agent.conf
     ~/.gnupg/gpg.conf: config/gnupg/gpg.conf
+    ~/.gnupg/scdaemon.conf: config/gnupg/scdaemon.conf
     ~/.config/zsh/antigen/antigen.zsh: config/zsh/antigen/antigen.zsh
     ~/.config/alacritty/alacritty.yml: config/alacritty/alacritty.yml
     ~/.tmux.conf: config/tmux/tmux.conf
