@@ -19,7 +19,6 @@ paths=(
   /usr/sbin
   /sbin
   /opt/homebrew/bin             # Homebrew
-  /opt/homebrew/bin             # Homebrew
 )
 
 for search_path in ${paths[@]}; do
