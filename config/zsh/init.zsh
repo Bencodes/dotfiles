@@ -38,9 +38,6 @@ antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-autosuggestions
-
-if [[ is_macos ]]; then 
-  antigen bundle osx 
-fi
+antigen bundle osx
 
 antigen apply
