@@ -12,13 +12,13 @@ paths=(
   /usr/local/sbin               
   $CARGO_HOME/bin               # Rust
   $JAVA_HOME/bin                # Java
-  $HOME/.bin                    # User
   /usr/bin                      # System
   /usr/sbin
   /usr/bin
   /usr/sbin
   /sbin
   /opt/homebrew/bin             # Homebrew
+  $HOME/.bin                    # User
 )
 
 for search_path in ${paths[@]}; do
