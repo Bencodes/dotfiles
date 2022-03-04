@@ -11,6 +11,7 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
 setopt HIST_VERIFY
+
 # Save x items to the given history file
 HISTSIZE=1000000
 SAVEHIST=1000000
@@ -33,12 +34,14 @@ bindkey -v
 
 antigen use oh-my-zsh
 antigen bundle adb
-antigen bundle brew
+antigen bundle git
 antigen bundle github
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-history-substring-search
-antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle brew
+antigen bundle command-not-found
 antigen bundle macos
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-history-substring-search
+antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen apply
