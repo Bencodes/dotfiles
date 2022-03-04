@@ -1,8 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-set -e
+set -euo pipefail
 
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+project_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+readonly project_dir
 
 # Make sure we have homebrew installed
 if ! which brew &> /dev/null; then
@@ -13,14 +14,15 @@ fi
 # Fetch our submodules
 git submodule update --init --recursive --quiet
 
-# Install the dotfiles
-"${BASEDIR}/dotbot/bin/dotbot" -d "${BASEDIR}" -c install.conf.yaml
-
 # Install the homebrew dependencies
 brew tap homebrew/bundle
-brew bundle --file="$BASEDIR"/Brewfile.taps
-brew bundle --file="$BASEDIR"/Brewfile.brews
-brew bundle --file="$BASEDIR"/Brewfile.casks
+brew bundle --file="$project_dir/Brewfile.taps"
+brew bundle --file="$project_dir/Brewfile.brews"
+brew bundle --file="$project_dir/Brewfile.casks"
 
 # Update the antigen dependencies
 antigen update
+
+# Link up the dot files
+"$project_dir/dotbot/bin/dotbot" -d "$project_dir" \
+  -c "$project_dir/install.conf.yaml"
