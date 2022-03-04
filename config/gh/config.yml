@@ -1,0 +1,4 @@
+github.com:
+    user: Bencodes
+    oauth_token: TOKEN_GOES_HERE
+    git_protocol: ssh
