@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
 
+export ANTIGEN_CACHE=true
 source $(dirname ${(%):-%x})/antigen/antigen.zsh
 source ~/.config/zsh/theme.zsh
 
