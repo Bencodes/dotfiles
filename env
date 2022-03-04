@@ -1,5 +1,5 @@
 # Editing
-editor=nvim
+readonly editor=nvim
 export EDITOR=$editor
 export VISUAL=$editor
 
@@ -11,10 +11,10 @@ export GOROOT=/usr/local/opt/go/libexeca
 export XDG_CONFIG_HOME="$HOME/.config/"
 
 # RipGrep
-RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/rgrc.conf"
+export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/rgrc.conf"
 
 # Homebrew Token
-export HOMEBREW_GITHUB_API_TOKEN="5d490da24520f5962060d2f829a1a806cd26b277"
+export HOMEBREW_GITHUB_API_TOKEN="TOKEN_GOES_HERE"
 
 # Homebrew Cask Install Directory
 export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
@@ -25,17 +25,22 @@ export HOMEBREW_NO_ANALYTICS=1
 # Skip auto formatting
 export SKIP_FORMATTING=true
 
-# Android
-export ANDROID_HOME="/usr/local/share/android-sdk"
-export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
-export ANDROID_NDK="/usr/local/share/android-ndk"
+# Android env variables
+readonly lyft_android_sdk="$HOME/.androidbin/lyft-android-sdk/android-sdk-4333796-unarchived/"
+readonly default_android_sdk="$HOME/Library/Android/sdk/"
+if [ -d "$lyft_android_sdk" ]; then
+    readonly android_sdk_root="$lyft_android_sdk"
+else
+    readonly android_sdk_root="$default_android_sdk"
+fi
+
+readonly ndk_version="21.4.7075529"
+export ANDROID_HOME="$android_sdk_root"
+export ANDROID_NDK_HOME="$android_sdk_root/ndk/$ndk_version"
+export ANDROID_NDK="$android_sdk_root/ndk/$ndk_version"
 
 # Skim https://github.com/lotabout/skim
 export SKIM_DEFAULT_COMMAND="fd"
-
-# Lyft specific infra
-export BUCK_IML_NO_R_FILES=true
-export BUCK_IML_NO_GEN_CODE=true
 
 # GPG Agent
 export GPG_TTY="$(tty)"
