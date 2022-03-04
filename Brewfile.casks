@@ -1,24 +1,24 @@
-cask_args appdir: "~/Applications"
-
+brew "slack"
 cask "1password", args: { appdir: "/Applications" }
-cask "firefox", args: { appdir: "/Applications" }
-cask "viscosity", args: { appdir: "/Applications" }
-cask "little-snitch", args: { appdir: "/Applications" }
-cask "micro-snitch", args: { appdir: "/Applications" }
 cask "alacritty"
-cask "authy"
-cask "docker"
-cask "slack"
-cask "telegram"
-cask "signal"
-cask "whatsapp"
 cask "android-ndk"
 cask "android-platform-tools"
 cask "android-sdk"
-cask "spotify"
-cask "sourcetree"
-cask "visual-studio-code"
+cask "authy"
+cask "docker"
+cask "firefox", args: { appdir: "/Applications" }
 cask "jetbrains-toolbox"
-cask "zulu-jdk8"
-cask "zulu-jdk11"
 cask "linear-linear"
+cask "little-snitch", args: { appdir: "/Applications" }
+cask "micro-snitch", args: { appdir: "/Applications" }
+cask "signal"
+cask "slack"
+cask "sourcetree"
+cask "spotify"
+cask "telegram"
+cask "viscosity", args: { appdir: "/Applications" }
+cask "visual-studio-code"
+cask "whatsapp"
+cask "zulu-jdk11"
+cask "zulu-jdk8"
+cask_args appdir: "~/Applications"
