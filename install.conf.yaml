@@ -4,14 +4,15 @@
         create: true
 - clean: ['~', '~/.config', '~/.tmux', '~/.bin']
 - link:
-    ~/.config/nvim/init.vim: config/nvim/init.vim
+    ~/.config/nvim/init.lua: config/nvim/init.lua
     ~/.config/nvim/autoload/plug.vim: config/nvim/plugins/vim-plug/plug.vim
+    ~/.config/nvim/lua: config/nvim/lua
     ~/.config/zsh/init.zsh: config/zsh/init.zsh
     ~/.config/zsh/theme.zsh: config/zsh/theme.zsh
     ~/.config/ripgrep/rgrc.conf: config/ripgrep/rgrc.conf
     ~/.config/starship.toml: config/starship/starship.toml
-    ~/.config/gh/config.yml: config/gh/config.toml
-    ~/.config/gh/hosts.yml: config/gh/hosts.toml
+    ~/.config/gh/config.yml: config/gh/config.yml
+    ~/.config/gh/hosts.yml: config/gh/hosts.yml
     ~/.config/hub: config/hub/config.yml
     ~/.gnupg/gpg-agent.conf: config/gnupg/gpg-agent.conf
     ~/.gnupg/gpg.conf: config/gnupg/gpg.conf
