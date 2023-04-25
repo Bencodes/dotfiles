@@ -6,16 +6,31 @@ scriptencoding utf-8
 
 " Plugins
 call plug#begin()
+  Plug 'wbthomason/packer.nvim'
+  Plug 'neovim/nvim-lspconfig'
+
+  Plug 'ambv/black'
+
   " The theme
   Plug 'dracula/vim'
+  Plug 'sonph/onehalf', { 'rtp': 'vim' }
+  Plug 'ayu-theme/ayu-vim' " or other package manager
+
   Plug 'rakr/vim-one'
   Plug 'vim-airline/vim-airline'
+
+  " Code formatting
+  Plug 'google/vim-maktaba'
+  Plug 'google/vim-codefmt'
+  Plug 'google/vim-glaive'
 
   " Bazel
   Plug 'google/vim-maktaba'
   Plug 'bazelbuild/vim-bazel'
   Plug 'bazelbuild/vim-ft-bzl'
-  
+  Plug 'airblade/vim-gitgutter'
+  Plug 'tpope/vim-commentary'
+
   " Code Navigation
   Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
   Plug 'mileszs/ack.vim'
@@ -46,12 +61,17 @@ call plug#begin()
   Plug 'tpope/vim-git'
 call plug#end()
 
+" the glaive#Install() should go after the "call vundle#end()"
+call glaive#Install()
+
 " Leader
 let mapleader = ","
 
 " Theme
 syntax on
-color dracula
+set termguicolors     " enable true colors support
+" let ayucolor="mirage"  " Options: light, mirage, dark
+colorscheme ayu
 
 " Random Configurations
 set showcmd
@@ -69,6 +89,9 @@ set spell spelllang=en_us
 " Mappings
 map <C-o> :NERDTreeToggle<CR>
 
+:vnoremap < <gv
+:vnoremap > >gv
+
 " CtrlP
 nmap <C-p> :SK<cr>
 
@@ -82,3 +105,6 @@ if has('clipboard')     " If the feature is available
     set clipboard+=unnamedplus
   endif
 endif
+
+lua require('lsp.kotlin')
+lua require'lspconfig'.pyright.setup{}
