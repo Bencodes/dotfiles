@@ -20,3 +20,5 @@ fi
 
 # Init starshipz
 eval "$(starship init zsh)"
+export PATH=/opt/homebrew/bin:$PATH
+
