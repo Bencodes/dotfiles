@@ -35,7 +35,7 @@ alias gaa='git add --all && gs'
 alias gf='git fetch --prune'
 alias gr='gf && ga && git stash && git pull --rebase && git stash apply'
 alias gup='git remote update -p; git merge --ff-only @{u}'
-alias gh='git for-each-ref --count=20 --sort=-committerdate refs/heads/ --format="%(refname:short)"'
+alias ghis='git for-each-ref --count=20 --sort=-committerdate refs/heads/ --format="%(refname:short)"'
 alias gu='git fetch && git rebase --autostash'
 alias pr=pull_request
 
