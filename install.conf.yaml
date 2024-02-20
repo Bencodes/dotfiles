@@ -18,7 +18,7 @@
     ~/.gnupg/gpg.conf: config/gnupg/gpg.conf
     ~/.gnupg/scdaemon.conf: config/gnupg/scdaemon.conf
     ~/.config/zsh/antigen/antigen.zsh: config/zsh/antigen/antigen.zsh
-    ~/.config/alacritty/alacritty.yml: config/alacritty/alacritty.yml
+    ~/.config/alacritty/alacritty.toml: config/alacritty/alacritty.toml
     ~/.tmux.conf: config/tmux/tmux.conf
     ~/.tmux/plugins/tpm: config/tmux/plugins/tpm
     ~/.gradle/gradle.properties: config/gradle/gradle.properties
@@ -26,12 +26,7 @@
     ~/.paths: paths
     ~/.aliases: aliases
     ~/.zshrc: zshrc
-    ~/.bin/copy-to-clipboard: bin/copy-to-clipboard
-    ~/.bin/dex-method-count: bin/dex-method-count
-    ~/.bin/git-pull-request: bin/git-pull-request
-    ~/.bin/open-source-tree: bin/open-source-tree
-    ~/.bin/random-mew: bin/random-mew
-    ~/.bin/shrug: bin/shrug
+    ~/.bin/: bin/
     ~/.gitconfig: config/git/gitconfig
     ~/.gitignore_global: config/git/gitignore_global
     ~/.ssh/config: config/ssh/config
