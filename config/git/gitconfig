@@ -1,5 +1,5 @@
 [user]
-  name = Benjamin Lee
+  name = Ben Lee
 	email = ben@ben.cm
 	signingkey = A4860BE41132A04C
 [github]
@@ -38,4 +38,3 @@
 	program = gpg
 [branch "master"]
 	pushRemote = NOPE
-
