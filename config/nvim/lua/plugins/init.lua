@@ -72,4 +72,3 @@ return require('packer').startup(function()
   -- Navigation
   use { 'christoomey/vim-tmux-navigator' }
 end)
-

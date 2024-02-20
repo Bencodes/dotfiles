@@ -6,11 +6,11 @@ end
 
 treesitter.setup {
   -- A list of parser names, or "all"
-    ensure_installed = { "lua", "kotlin", "python", "json", "yaml", "java" },
+    ensure_installed = { "lua", "kotlin", "python", "json", "yaml", "java", "bash", "jq", "starlark" },
+		sync_install = false,
     autotag = {
         enable = true,
     },
-    ensure_installed = "all",
     highlight = {
         enable = true,
     },
