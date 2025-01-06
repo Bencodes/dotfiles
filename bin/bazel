@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+set -euo pipefail
+
+bazelisk_bin=$(which bazelisk)
+if [[ -e ./bazelw ]]; then
+    exec ./bazelw "$@"
+elif command -v "$bazelisk_bin" >/dev/null; then
+    exec "$bazelisk_bin" "$@"
+fi
