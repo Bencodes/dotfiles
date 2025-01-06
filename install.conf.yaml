@@ -1,8 +1,8 @@
 - defaults:
     link:
-        relink: true
-        create: true
-- clean: ['~', '~/.config', '~/.tmux', '~/.bin']
+      relink: true
+      create: true
+- clean: ["~", "~/.config", "~/.tmux", "~/.bin"]
 - link:
     ~/.config/nvim/init.lua: config/nvim/init.lua
     ~/.config/nvim/autoload/plug.vim: config/nvim/plugins/vim-plug/plug.vim
@@ -30,4 +30,3 @@
     ~/.gitconfig: config/git/gitconfig
     ~/.gitignore_global: config/git/gitignore_global
     ~/.ssh/config: config/ssh/config
-
