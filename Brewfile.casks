@@ -1,5 +1,6 @@
 cask_args appdir: "~/Applications"
 
+cask "zulu@8"
 cask "zulu@11"
 cask "zulu@17"
 cask "zulu@21"
