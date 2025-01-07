@@ -1,5 +1,3 @@
-live_config_reload = true
-
 [bell]
 duration = 0
 
@@ -658,7 +656,7 @@ mouse = "Middle"
 history = 0
 multiplier = 3
 
-[shell]
+[terminal.shell]
 args = ["--login", "-c", "/opt/homebrew/bin/tmux attach -t TMUX || /opt/homebrew/bin/tmux new -s TMUX"]
 program = "/opt/homebrew/bin/zsh"
 
