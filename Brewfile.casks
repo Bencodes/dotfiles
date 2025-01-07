@@ -1,21 +1,21 @@
 cask_args appdir: "~/Applications"
 
+cask zulu@8
+cask zulu@11
+cask zulu@17
+
 cask "1password", args: { appdir: "/Applications" }
 cask "firefox", args: { appdir: "/Applications" }
 cask "viscosity", args: { appdir: "/Applications" }
 cask "little-snitch", args: { appdir: "/Applications" }
 cask "micro-snitch", args: { appdir: "/Applications" }
 cask "alacritty"
-cask "authy"
 cask "docker"
 cask "slack"
 cask "telegram"
 cask "signal"
 cask "whatsapp"
 cask "spotify"
-cask "sourcetree"
 cask "visual-studio-code"
 cask "jetbrains-toolbox"
-cask "zulu-jdk8"
-cask "zulu-jdk11"
 cask "linear-linear"
