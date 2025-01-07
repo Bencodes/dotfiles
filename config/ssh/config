@@ -4,4 +4,4 @@ Host *
 
 Host github.com
   IdentitiesOnly yes
-  IdentityFile ~/.ssh/id_rsa.pub
+  IdentityFile ~/.ssh/id_ed25519
