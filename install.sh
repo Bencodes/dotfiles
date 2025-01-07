@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 
 set -euo pipefail
 
@@ -16,7 +17,6 @@ git submodule update --init --recursive --quiet
 
 # Install the homebrew dependencies
 brew tap homebrew/bundle
-brew bundle --file="$project_dir/Brewfile.taps"
 brew bundle --file="$project_dir/Brewfile.brews"
 brew bundle --file="$project_dir/Brewfile.casks"
 
