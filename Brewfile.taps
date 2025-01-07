@@ -1,5 +1,0 @@
-tap "homebrew/cask"
-tap "homebrew/cask-versions"
-tap "homebrew/core"
-tap "mdogan/zulu"
-tap "AdoptOpenJDK/openjdk"
