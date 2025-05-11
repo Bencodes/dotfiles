@@ -1,6 +1,11 @@
 #!/usr/bin/env zsh
 
-source $(dirname ${(%):-%x})/antigen/antigen.zsh
+# Antigen path when using Homebrew:
+source $(brew --prefix)/share/antigen/antigen.zsh
+
+autoload -U compinit
+compinit
+
 source ~/.config/zsh/theme.zsh
 
 # History settings
@@ -32,7 +37,6 @@ setopt CHECK_JOBS
 bindkey -v
 
 antigen use oh-my-zsh
-antigen bundle adb
 antigen bundle git
 antigen bundle github
 antigen bundle brew

@@ -17,7 +17,6 @@
     ~/.gnupg/gpg-agent.conf: config/gnupg/gpg-agent.conf
     ~/.gnupg/gpg.conf: config/gnupg/gpg.conf
     ~/.gnupg/scdaemon.conf: config/gnupg/scdaemon.conf
-    ~/.config/zsh/antigen/antigen.zsh: config/zsh/antigen/antigen.zsh
     ~/.config/alacritty/alacritty.toml: config/alacritty/alacritty.toml
     ~/.tmux.conf: config/tmux/tmux.conf
     ~/.tmux/plugins/tpm: config/tmux/plugins/tpm

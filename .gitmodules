@@ -7,6 +7,3 @@
 [submodule "config/tmux/plugins/tpm"]
 	path = config/tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
-[submodule "config/zsh/antigen"]
-	path = config/zsh/antigen
-	url = https://github.com/zsh-users/antigen.git
