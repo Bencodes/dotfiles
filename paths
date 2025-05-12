@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Rust
 export CARGO_HOME=$HOME/.cargo
 
