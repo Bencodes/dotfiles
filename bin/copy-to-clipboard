@@ -1,5 +1,0 @@
-#!/bin/sh
-
-function clipboard() {
-  if [[ -n $1 ]]; echo $1 | pbcopy
-}

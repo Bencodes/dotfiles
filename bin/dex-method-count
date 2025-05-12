@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
+set -euo pipefail
 
 function dex-method-count() {
   cat $1 | head -c 92 | tail -c 4 | hexdump -e '1/4 "%d"'

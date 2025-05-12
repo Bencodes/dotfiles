@@ -39,7 +39,6 @@ alias gr='gf && ga && git stash && git pull --rebase && git stash apply'
 alias gup='git remote update -p; git merge --ff-only @{u}'
 alias ghis='git for-each-ref --count=20 --sort=-committerdate refs/heads/ --format="%(refname:short)"'
 alias gu='git fetch && git rebase --autostash'
-alias pr=pull_request
 
 # Brew
 alias bu='brew upgrade && brew update --all && brew cleanup && brew doctor && brew prune'
@@ -50,21 +49,3 @@ alias m="mainframer"
 
 # Open
 alias o='open .'
-
-function pull_request() {
-  push_and_set_upstream
-  hub pull-request -o -m $1
-}
-
-# Pushes the current branch and sets it to upstream
-function push_and_set_upstream() {
-  git push -u origin "$(git branch | grep '\*' | cut -d ' ' -f 2)"
-}
-
-function make-mp4() {
-  ffmpeg -f gif -i $1 $1.mp4
-}
-
-function make-gif() {
-  ffmpeg -i $1 -vf fps=10,scale=480:-1 $1.gif
-}

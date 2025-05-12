@@ -1,5 +1,5 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-function shrug() {
-  clipboard "¯\_(ツ)_/¯"
-}
+set -euo pipefail
+
+echo "¯\_(ツ)_/¯"
