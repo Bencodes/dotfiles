@@ -22,6 +22,7 @@
     ~/.tmux/plugins/tpm: config/tmux/plugins/tpm
     ~/.gradle/gradle.properties: config/gradle/gradle.properties
     ~/.env: env
+    ~/.completions: completions
     ~/.paths: paths
     ~/.aliases: aliases
     ~/.zshrc: zshrc
