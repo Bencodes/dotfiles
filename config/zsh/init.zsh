@@ -38,6 +38,7 @@ bindkey -v
 
 antigen use oh-my-zsh
 antigen bundle git
+antigen bundle pip
 antigen bundle github
 antigen bundle brew
 antigen bundle command-not-found
