@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 set -euo pipefail
 
 project_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -16,9 +15,8 @@ fi
 git submodule update --init --recursive --quiet
 
 # Install the homebrew dependencies
-brew tap homebrew/bundle
-brew bundle --file="$project_dir/Brewfile.brews"
-brew bundle --file="$project_dir/Brewfile.casks"
+brew bundle --file="$project_dir/Brewfile.brews" || true
+brew bundle --file="$project_dir/Brewfile.casks" || true
 
 # Link up the dot files
 "$project_dir/dotbot/bin/dotbot" -d "$project_dir" \
