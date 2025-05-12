@@ -21,6 +21,3 @@ brew bundle --file="$project_dir/Brewfile.casks" || true
 # Link up the dot files
 "$project_dir/dotbot/bin/dotbot" -d "$project_dir" \
   -c "$project_dir/install.conf.yaml"
-
-# Update the antigen dependencies
-antigen update
