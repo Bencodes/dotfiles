@@ -1,0 +1,85 @@
+#!/usr/bin/env python3
+
+import subprocess
+import re
+import argparse
+from datetime import datetime, timedelta
+
+
+def _parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Count commits with messages matching a regex in a given date range."
+    )
+    parser.add_argument(
+        "--start_date", type=str, help="Start date (YYYY-MM-DD)", required=True
+    )
+    parser.add_argument(
+        "--end_date", type=str, help="End date (YYYY-MM-DD)", required=True
+    )
+    parser.add_argument(
+        "--pattern",
+        type=str,
+        help="Regex pattern to match commit messages",
+        required=False,
+        default="*",
+    )
+    return parser.parse_args()
+
+
+def _get_commit_messages(
+    start_date: str,
+    end_date: str,
+    regex_pattern: str,
+) -> dict[str, list[str]]:
+    start = datetime.strptime(start_date, "%Y-%m-%d")
+    end = datetime.strptime(end_date, "%Y-%m-%d")
+    pattern = re.compile(regex_pattern)
+
+    dates = {}
+    current_date = start
+    while current_date <= end:
+        next_date = current_date + timedelta(days=1)
+        current_date_str = current_date.strftime("%Y-%m-%d")
+        next_date_str = next_date.strftime("%Y-%m-%d")
+        match_count = 0
+
+        try:
+            log_output = subprocess.check_output(
+                [
+                    "git",
+                    "log",
+                    "--pretty=format:%s",
+                    "--date=format:%Y-%m-%d",
+                    "--since",
+                    current_date_str,
+                    "--until",
+                    next_date_str,
+                ],
+                text=True,
+            )
+            messages = log_output.strip().split("\n") or []
+            match_count = sum(1 for message in messages if pattern.search(message))
+        except subprocess.CalledProcessError as e:
+            print(
+                f"Error fetching git log for {current_date_str}: {e}"
+            )
+        dates[current_date_str] = match_count
+        current_date = next_date
+    return dates
+
+
+def _main():
+    args = _parse_args()
+    commit_messages = _get_commit_messages(
+        start_date=args.start_date,
+        end_date=args.end_date,
+        regex_pattern=args.pattern,
+    )
+
+    print("date, count")
+    for k, v in commit_messages.items():
+        print(f"{k}, {v}")
+
+
+if __name__ == "__main__":
+    _main()
