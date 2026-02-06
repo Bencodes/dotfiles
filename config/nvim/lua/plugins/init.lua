@@ -39,7 +39,7 @@ return require('packer').startup(function()
     'sbdchd/neoformat',
     config = require "plugins.configs.neoformat",
   }
-  -- Code completion and syntax heilighting
+  -- Code completion and syntax highlighting
   use { 
     'github/copilot.vim',
     config = require "plugins.configs.copilot",
