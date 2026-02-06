@@ -16,8 +16,6 @@ paths=(
   $JAVA_HOME/bin                # Java
   /usr/bin                      # System
   /usr/sbin
-  /usr/bin
-  /usr/sbin
   /sbin
   /opt/homebrew/bin             # Homebrew
   $HOME/.bin                    # User
