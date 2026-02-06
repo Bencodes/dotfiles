@@ -15,6 +15,5 @@ if [ -f ~/.zshlyftrc ]; then
   source ~/.zshlyftrc
 fi
 
-# Init starshipz
+# Init starship
 eval "$(starship init zsh)"
-
