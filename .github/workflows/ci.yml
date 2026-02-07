@@ -5,12 +5,14 @@ on:
     branches:
       - master
   pull_request:
+
 jobs:
-  build:
+  pre-commit:
+    name: Pre-commit
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: shellcheck
-        uses: ludeeus/action-shellcheck@2.0.0
-      - name: pre-commit
-        uses: pre-commit/action@v3.0.1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - uses: pre-commit/action@v3.0.1
