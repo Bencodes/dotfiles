@@ -11,6 +11,8 @@ cask "viscosity", args: { appdir: "/Applications" }
 cask "little-snitch", args: { appdir: "/Applications" }
 cask "micro-snitch", args: { appdir: "/Applications" }
 cask "alacritty"
+cask "codex-app"
+cask "cursor"
 cask "docker"
 cask "slack"
 cask "discord"
