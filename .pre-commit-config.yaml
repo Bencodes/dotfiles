@@ -1,14 +1,30 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+
+# Exclude git submodules from all hooks
+exclude: '^(dotbot|config/nvim/plugins/vim-plug|config/tmux/plugins/tpm)/'
+
 repos:
-  - repo: https://github.com/prettier/prettier
-    rev: "2.1.2"
-    hooks:
-      - id: prettier
-        exclude: ".*\\.(md|json|js)"
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.2.0
+    rev: v6.0.0
     hooks:
       - id: check-yaml
+      - id: check-toml
+      - id: check-json
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: check-merge-conflict
+      - id: check-executables-have-shebangs
+      - id: check-shebang-scripts-are-executable
+      - id: check-symlinks
+      - id: mixed-line-ending
+        args: [--fix=lf]
   - repo: https://github.com/shellcheck-py/shellcheck-py
-    rev: v0.7.1.1
+    rev: v0.11.0.1
     hooks:
       - id: shellcheck
+        exclude: '\.zsh$'
+  - repo: https://github.com/JohnnyMorganz/StyLua
+    rev: v2.3.1
+    hooks:
+      - id: stylua-github
