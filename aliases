@@ -44,8 +44,5 @@ alias gu='git fetch && git rebase --autostash'
 alias bu='brew upgrade && brew update --all && brew cleanup && brew doctor && brew prune'
 alias bcu='brew cask doctor && brew cleanup'
 
-# Mainframer
-alias m="mainframer"
-
 # Open
 alias o='open .'
