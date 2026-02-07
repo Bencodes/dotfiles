@@ -1,15 +1,15 @@
 local M = {}
 
 M.setup = function(on_attach, capabilities)
-    local lspconfig = require "lspconfig"
+	local lspconfig = require("lspconfig")
 
-    lspconfig.pyright.setup {
-        on_attach = on_attach,
-        flags = {
-            debounce_text_changes = 150,
-        },
-        capabilities = capabilities,
-    }
+	lspconfig.pyright.setup({
+		on_attach = on_attach,
+		flags = {
+			debounce_text_changes = 150,
+		},
+		capabilities = capabilities,
+	})
 end
 
 return M

@@ -1,8 +1,7 @@
 local ok, nerdtree = pcall(require, "nerdtree")
 
 if not ok then
-    return
+	return
 end
 
-nerdtree.setup {
-}
+nerdtree.setup({})
