@@ -2,10 +2,10 @@
 
 funcs=(
   /usr/local/share/zsh/site-functions
-  $(brew --prefix)/share/zsh/site-functions
-  $(brew --prefix)/share/zsh-completions
+  "$(brew --prefix)/share/zsh/site-functions"
+  "$(brew --prefix)/share/zsh-completions"
 )
-for func in ${funcs[@]}; do
+for func in "${funcs[@]}"; do
   [[ -d $func ]] \
   && [[ $FPATH != *$func* ]] \
   && FPATH=$func:$FPATH
