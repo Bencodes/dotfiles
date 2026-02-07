@@ -5,6 +5,9 @@ readonly editor=nvim
 export EDITOR=$editor
 export VISUAL=$editor
 
+# Use the new Docker compose bake feature by default
+export COMPOSE_BAKE=true
+
 # Go
 export GOPATH=$HOME/Workspace
 export GOROOT=/usr/local/opt/go/libexeca
