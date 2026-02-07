@@ -48,6 +48,8 @@ export ANDROID_NDK="$android_sdk_root/ndk/$ndk_version"
 export SKIM_DEFAULT_COMMAND="fd"
 
 # GPG Agent
-export GPG_TTY="$(tty)"
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+GPG_TTY="$(tty)"
+export GPG_TTY
+SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+export SSH_AUTH_SOCK
 gpgconf --launch gpg-agent

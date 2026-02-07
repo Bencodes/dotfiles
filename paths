@@ -4,7 +4,8 @@
 export CARGO_HOME=$HOME/.cargo
 
 # Java
-export JAVA_HOME="$(/usr/libexec/java_home -v 21)"
+JAVA_HOME="$(/usr/libexec/java_home -v 21)"
+export JAVA_HOME
 
 # Kotlin
 export KOTLIN_HOME="/usr/local/opt/kotlin/"
