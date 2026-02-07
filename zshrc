@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# shellcheck disable=SC1090
 
 if [[ $OSTYPE == darwin* ]]; then
   export OSX=true
