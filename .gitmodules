@@ -1,6 +1,3 @@
-[submodule "dotbot"]
-	path = dotbot
-	url = https://github.com/anishathalye/dotbot
 [submodule "config/nvim/plugins/vim-plug"]
 	path = config/nvim/plugins/vim-plug
 	url = https://github.com/junegunn/vim-plug

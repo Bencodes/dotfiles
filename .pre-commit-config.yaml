@@ -2,7 +2,7 @@
 # See https://pre-commit.com/hooks.html for more hooks
 
 # Exclude git submodules from all hooks
-exclude: '^(keebs|dotbot|config/nvim/plugins/vim-plug|config/tmux/plugins/tpm)/'
+exclude: '^(keebs|config/nvim/plugins/vim-plug|config/tmux/plugins/tpm)/'
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks

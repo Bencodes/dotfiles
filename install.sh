@@ -19,5 +19,5 @@ brew bundle --file="$project_dir/Brewfile.brews" || true
 brew bundle --file="$project_dir/Brewfile.casks" || true
 
 # Link up the dot files
-"$project_dir/dotbot/bin/dotbot" -d "$project_dir" \
+dotbot -d "$project_dir" \
   -c "$project_dir/install.conf.yaml"
