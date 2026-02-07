@@ -21,7 +21,8 @@ return require("packer").startup(function()
 	})
 	-- LSPs
 	use({ "neovim/nvim-lspconfig" })
-	use({ "williamboman/nvim-lsp-installer" })
+	use({ "williamboman/mason.nvim" })
+	use({ "williamboman/mason-lspconfig.nvim" })
 	-- Fuzzy finding
 	use({ "jremmen/vim-ripgrep" })
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
