@@ -547,7 +547,7 @@ key = "N"
 mods = "Command"
 
 [keyboard.bindings.command]
-args = ["new-window", "/opt/homebrew/bin/zsh"]
+args = ["new-window"]
 program = "/opt/homebrew/bin/tmux"
 
 [[keyboard.bindings]]
@@ -555,7 +555,7 @@ key = "T"
 mods = "Command"
 
 [keyboard.bindings.command]
-args = ["new-window", "/opt/homebrew/bin/zsh"]
+args = ["new-window"]
 program = "/opt/homebrew/bin/tmux"
 
 [[keyboard.bindings]]
