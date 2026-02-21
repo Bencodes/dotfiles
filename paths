@@ -12,21 +12,24 @@ export KOTLIN_HOME="/usr/local/opt/kotlin/"
 
 # Configure the paths
 paths=(
+  "$HOME/.bin"                    # User
+  /opt/homebrew/bin               # Homebrew
   /usr/local/bin
-  /usr/local/sbin
   "$CARGO_HOME/bin"               # Rust
   "$JAVA_HOME/bin"                # Java
-  /usr/bin                      # System
+  /opt/homebrew/sbin              # Homebrew sbin
+  /usr/local/sbin
+  /usr/bin                        # System
+  /bin
   /usr/sbin
   /sbin
-  /opt/homebrew/bin             # Homebrew
-  "$HOME/.bin"                    # User
+  "$HOME/.lmstudio/bin"           # LM Studio
 )
 
 for search_path in "${paths[@]}"; do
   [[ -d $search_path ]] \
-  && [[ $PATH != *$search_path* ]] \
-  && PATH=$search_path:$PATH
+  && [[ ":$PATH:" != *":$search_path:"* ]] \
+  && PATH=$PATH:$search_path
 done
 
 export PATH
