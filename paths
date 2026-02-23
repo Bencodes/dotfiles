@@ -24,6 +24,7 @@ paths=(
   /usr/sbin
   /sbin
   "$HOME/.lmstudio/bin"           # LM Studio
+  "$HOME/.rd/bin"							# Rancher
 )
 
 for search_path in "${paths[@]}"; do
