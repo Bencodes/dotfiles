@@ -30,7 +30,7 @@ paths=(
 for search_path in "${paths[@]}"; do
   [[ -d $search_path ]] \
   && [[ ":$PATH:" != *":$search_path:"* ]] \
-  && PATH=$PATH:$search_path
+  && PATH=$search_path:$PATH
 done
 
 export PATH
