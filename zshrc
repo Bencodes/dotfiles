@@ -5,9 +5,8 @@ if [[ $OSTYPE == darwin* ]]; then
   export OSX=true
 fi
 
-# Homebrew prefix
-HOMEBREW_PREFIX="$(brew --prefix)"
-export HOMEBREW_PREFIX
+# Homebrew prefix — hardcoded to avoid needing brew on PATH at init time
+export HOMEBREW_PREFIX="/opt/homebrew"
 
 source ~/.paths
 source ~/.env
