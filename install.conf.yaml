@@ -5,7 +5,6 @@
 - clean: ["~", "~/.config", "~/.tmux", "~/.bin"]
 - link:
     ~/.config/nvim/init.lua: config/nvim/init.lua
-    ~/.config/nvim/autoload/plug.vim: config/nvim/plugins/vim-plug/plug.vim
     ~/.config/nvim/lua: config/nvim/lua
     ~/.config/zsh/init.zsh: config/zsh/init.zsh
     ~/.config/zsh/theme.zsh: config/zsh/theme.zsh
