@@ -1,9 +1,6 @@
 #!/usr/bin/env zsh
 
-export ANTIGEN_CACHE=false
-
-# Antigen path when using Homebrew:
-source $(brew --prefix)/share/antigen/antigen.zsh
+source "$HOMEBREW_PREFIX/share/antigen/antigen.zsh"
 
 autoload -U compinit
 compinit
