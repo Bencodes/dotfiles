@@ -5,6 +5,10 @@ if [[ $OSTYPE == darwin* ]]; then
   export OSX=true
 fi
 
+# Homebrew prefix
+HOMEBREW_PREFIX="$(brew --prefix)"
+export HOMEBREW_PREFIX
+
 source ~/.paths
 source ~/.env
 source ~/.aliases

@@ -2,8 +2,8 @@
 
 funcs=(
   /usr/local/share/zsh/site-functions
-  "$(brew --prefix)/share/zsh/site-functions"
-  "$(brew --prefix)/share/zsh-completions"
+  "$HOMEBREW_PREFIX/share/zsh/site-functions"
+  "$HOMEBREW_PREFIX/share/zsh-completions"
 )
 for func in "${funcs[@]}"; do
   [[ -d $func ]] \

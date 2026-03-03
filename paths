@@ -13,11 +13,11 @@ export KOTLIN_HOME="/usr/local/opt/kotlin/"
 # Configure the paths
 paths=(
   "$HOME/.bin"                    # User
-  /opt/homebrew/bin               # Homebrew
+  "$HOMEBREW_PREFIX/bin"          # Homebrew
   /usr/local/bin
   "$CARGO_HOME/bin"               # Rust
   "$JAVA_HOME/bin"                # Java
-  /opt/homebrew/sbin              # Homebrew sbin
+  "$HOMEBREW_PREFIX/sbin"         # Homebrew sbin
   /usr/local/sbin
   /usr/bin                        # System
   /bin
