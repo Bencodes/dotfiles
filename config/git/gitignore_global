@@ -57,8 +57,9 @@ Session.vim
 
 # Temporary
 .netrwhist
-# Auto-generated tag files
+# Auto-generated tag files (un-ignore directories so source packages named "tags" aren't skipped)
 tags
+!tags/
 # Persistent undo
 [._]*.un~
 
