@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Rust
-export CARGO_HOME=$HOME/.cargo
+export CARGO_HOME="$HOME/.cargo"
 
 # Java
 JAVA_HOME="$(/usr/libexec/java_home -v 21)"
@@ -24,7 +24,7 @@ paths=(
   /usr/sbin
   /sbin
   "$HOME/.lmstudio/bin"           # LM Studio
-  "$HOME/.rd/bin"							# Rancher
+  "$HOME/.rd/bin"							    # Rancher
 )
 
 for search_path in "${paths[@]}"; do
