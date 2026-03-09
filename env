@@ -10,7 +10,7 @@ export COMPOSE_BAKE=true
 
 # Go
 export GOPATH=$HOME/Workspace
-export GOROOT=/usr/local/opt/go/libexeca
+export GOROOT=/opt/homebrew/opt/go/libexec
 
 # Neovim
 export XDG_CONFIG_HOME="$HOME/.config/"
