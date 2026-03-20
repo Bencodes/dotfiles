@@ -4,6 +4,8 @@ cask "zulu@11"
 cask "zulu@17"
 cask "zulu@21"
 cask "zulu@24"
+cask "android-commandlinetools"
+cask "android-platform-tools"
 
 cask "1password", args: { appdir: "/Applications" }
 cask "firefox", args: { appdir: "/Applications" }
