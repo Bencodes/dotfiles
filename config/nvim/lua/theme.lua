@@ -9,13 +9,13 @@ github_theme.setup({
 		styles = {
 			functions = "italic",
 		},
-		darken = {
-			sidebars = {
-				enable = true,
-				list = { "qf", "vista_kind", "terminal", "packer" },
+			darken = {
+				sidebars = {
+					enable = true,
+					list = { "qf", "terminal", "lazy" },
+				},
 			},
 		},
-	},
 
 	-- Change the "hint" color to the "orange" color, and make the "error" color bright red
 	specs = {

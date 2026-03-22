@@ -1,1 +1,0 @@
--- NERDTree does not expose a Lua setup API.

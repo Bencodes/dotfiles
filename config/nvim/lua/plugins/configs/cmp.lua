@@ -5,6 +5,7 @@ if not ok then
 end
 
 local icons = {
+	Copilot = "",
 	Text = "",
 	Method = "",
 	Function = "",
@@ -51,7 +52,7 @@ cmp.setup({
 		fields = { "kind", "abbr", "menu" },
 		format = function(_, vim_item)
 			vim_item.menu = vim_item.kind
-			vim_item.kind = icons[vim_item.kind]
+			vim_item.kind = icons[vim_item.kind] or vim_item.kind
 
 			return vim_item
 		end,
@@ -98,6 +99,7 @@ cmp.setup({
 		}),
 	},
 	sources = {
+		{ name = "copilot", group_index = 2 },
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
 		{ name = "vsnip" },
@@ -105,8 +107,31 @@ cmp.setup({
 		{ name = "buffer" },
 		{ name = "nvim_lsp_signature_help" },
 	},
+	sorting = {
+		priority_weight = 2,
+		comparators = {
+			require("copilot_cmp.comparators").prioritize,
+			cmp.config.compare.offset,
+			cmp.config.compare.exact,
+			cmp.config.compare.score,
+			cmp.config.compare.recently_used,
+			cmp.config.compare.locality,
+			cmp.config.compare.kind,
+			cmp.config.compare.sort_text,
+			cmp.config.compare.length,
+			cmp.config.compare.order,
+		},
+	},
 	preselect = cmp.PreselectMode.None,
 })
+
+cmp.event:on("menu_opened", function()
+	vim.b.copilot_suggestion_hidden = true
+end)
+
+cmp.event:on("menu_closed", function()
+	vim.b.copilot_suggestion_hidden = false
+end)
 
 cmp.setup.cmdline("/", {
 	mapping = cmp.mapping.preset.cmdline(),
