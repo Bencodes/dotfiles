@@ -6,7 +6,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
 		fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
 end
 
--- Install the rest of the plugins
 return require("packer").startup(function()
 	-- Packer can manage itself
 	use({ "wbthomason/packer.nvim" })
@@ -17,7 +16,7 @@ return require("packer").startup(function()
 	use({ "shaunsingh/nord.nvim" })
 	use({
 		"kyazdani42/nvim-web-devicons",
-		config = require("plugins.configs.icons"),
+		config = [[require("plugins.configs.icons")]],
 	})
 	-- LSPs
 	use({ "neovim/nvim-lspconfig" })
@@ -29,30 +28,34 @@ return require("packer").startup(function()
 	use({
 		"nvim-telescope/telescope.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
-		config = require("plugins.configs.telescope"),
+		config = [[require("plugins.configs.telescope")]],
 	})
 	-- File browser
 	use({
 		"preservim/nerdtree",
-		config = require("plugins.configs.nerdtree"),
+		config = [[require("plugins.configs.nerdtree")]],
 	})
 	-- Formatting
 	use({
 		"sbdchd/neoformat",
-		config = require("plugins.configs.neoformat"),
+		config = [[require("plugins.configs.neoformat")]],
 	})
 	-- Code completion and syntax highlighting
 	use({
 		"github/copilot.vim",
-		config = require("plugins.configs.copilot"),
+		config = [[require("plugins.configs.copilot")]],
 	})
 	use({ "udalov/kotlin-vim" })
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
-		config = require("plugins.configs.treesitter"),
+		config = [[require("plugins.configs.treesitter")]],
 	})
 	use("nvim-treesitter/nvim-treesitter-textobjects")
+	use({
+		"MeanderingProgrammer/render-markdown.nvim",
+		config = [[require("plugins.configs.render-markdown")]],
+	})
 	-- use 'nvim-treesitter/playground'
 	use({
 		"hrsh7th/nvim-cmp",
@@ -67,7 +70,7 @@ return require("packer").startup(function()
 			"hrsh7th/vim-vsnip",
 			"hrsh7th/cmp-nvim-lsp-signature-help",
 		},
-		config = require("plugins.configs.cmp"),
+		config = [[require("plugins.configs.cmp")]],
 	})
 	-- Git
 	use({ "airblade/vim-gitgutter" })
