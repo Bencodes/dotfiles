@@ -1,4 +1,10 @@
-require("github-theme").setup({
+local ok, github_theme = pcall(require, "github-theme")
+
+if not ok then
+	return
+end
+
+github_theme.setup({
 	options = {
 		styles = {
 			functions = "italic",
@@ -25,11 +31,8 @@ require("github-theme").setup({
 	groups = {
 		all = {
 			htmlTag = { fg = "palette.red", bg = "#282c34", sp = "diag.hint", style = "underline" },
-			DiagnosticHint = { link = "LspDiagnosticsDefaultHint" },
-			-- this will remove the highlight groups
-			TSField = {},
 		},
 	},
 })
 
-vim.cmd("colorscheme github_dark")
+pcall(vim.cmd.colorscheme, "github_dark")

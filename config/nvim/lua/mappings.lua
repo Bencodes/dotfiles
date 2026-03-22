@@ -1,9 +1,5 @@
--- Select the previous selection after indentation
-vim.cmd("vnoremap < <gv")
-vim.cmd("vnoremap > >gv")
+vim.keymap.set("x", "<", "<gv", { desc = "Indent left and keep selection" })
+vim.keymap.set("x", ">", ">gv", { desc = "Indent right and keep selection" })
 
--- Ctrl+p to fuzzy find files
-vim.cmd("nmap <C-p> :Telescope find_files<cr>")
-
--- Ctrl+o to launch nerd tree file browser
-vim.cmd("nmap <C-o> :NERDTreeToggle<cr>")
+vim.keymap.set("n", "<C-p>", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
+vim.keymap.set("n", "<C-o>", "<cmd>NERDTreeToggle<cr>", { desc = "Toggle NERDTree" })

@@ -5,9 +5,6 @@ if not ok then
 end
 
 telescope.setup({
-	picker = {
-		hidden = false,
-	},
 	defaults = {
 		vimgrep_arguments = {
 			"rg",
@@ -25,27 +22,27 @@ telescope.setup({
 			"--glob=!bazel-out/",
 			"--glob=!bazel-testlogs/",
 		},
-		pickers = {
-			find_files = {
-				find_command = {
-					"fd",
-					"--type=file",
-					"--hidden",
-					"--exclude=.git",
-					"--exclude=bazel-bin",
-					"--exclude=bazel-instant-android",
-					"--exclude=bazel-out",
-					"--exclude=testlogs",
-				},
+	},
+	pickers = {
+		find_files = {
+			find_command = {
+				"fd",
+				"--type=file",
+				"--hidden",
+				"--exclude=.git",
+				"--exclude=bazel-bin",
+				"--exclude=bazel-instant-android",
+				"--exclude=bazel-out",
+				"--exclude=testlogs",
 			},
 		},
-		extensions = {
-			fzf = {
-				fuzzy = true,
-				override_generic_sorter = true,
-				override_file_sorter = true,
-				case_mode = "smart_case",
-			},
+	},
+	extensions = {
+		fzf = {
+			fuzzy = true,
+			override_generic_sorter = true,
+			override_file_sorter = true,
+			case_mode = "smart_case",
 		},
 	},
 })
