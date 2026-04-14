@@ -1,3 +1,5 @@
+tap "mongodb/brew"
+
 brew "advancecomp"
 brew "antigen"
 brew "apktool"
@@ -37,6 +39,7 @@ brew "libtool"
 brew "libxmlsec1"
 brew "lua-language-server"
 brew "mkdocs"
+brew "mongodb-database-tools"
 brew "ncdu"
 brew "neovim"
 brew "node"
