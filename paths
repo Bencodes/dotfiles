@@ -27,10 +27,11 @@ paths=(
   "$HOME/.rd/bin"							    # Rancher
 )
 
+new_path=""
 for search_path in "${paths[@]}"; do
   [[ -d $search_path ]] \
-  && [[ ":$PATH:" != *":$search_path:"* ]] \
-  && PATH=$search_path:$PATH
+  && [[ ":$new_path:" != *":$search_path:"* ]] \
+  && new_path="${new_path:+$new_path:}$search_path"
 done
 
-export PATH
+export PATH="$new_path"
