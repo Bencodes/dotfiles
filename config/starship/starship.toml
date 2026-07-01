@@ -3,6 +3,9 @@ add_newline = true
 [character]
 success_symbol = "➜"
 
+[battery]
+disabled = true
+
 [git_status]
 disabled = true
 
