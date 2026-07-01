@@ -20,8 +20,8 @@ fi
 source ~/.paths
 source ~/.env
 source ~/.aliases
-source ~/.config/zsh/init.zsh
 source ~/.completions
+source ~/.config/zsh/init.zsh
 
 # Optionally load zshlyftrc
 if [ -f ~/.zshlyftrc ]; then
