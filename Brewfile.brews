@@ -13,7 +13,7 @@ brew "bazelisk"
 brew "buildifier"
 brew "buildozer"
 brew "cloc"
-brew "codex" if OS.mac?
+cask "codex"
 brew "cursor-cli" if OS.mac?
 brew "dex2jar"
 brew "docker"
