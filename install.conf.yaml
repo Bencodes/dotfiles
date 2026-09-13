@@ -13,10 +13,14 @@
     ~/.config/gh/config.yml: config/gh/config.yml
     ~/.config/gh/hosts.yml: config/gh/hosts.yml
     ~/.config/hub: config/hub/config.yml
-    ~/.gnupg/gpg-agent.conf: config/gnupg/gpg-agent.conf
+    ~/.gnupg/gpg-agent.conf:
+      path: config/gnupg/gpg-agent.conf
+      if: '[ "$(uname -s)" = Darwin ]'
     ~/.gnupg/gpg.conf: config/gnupg/gpg.conf
     ~/.gnupg/scdaemon.conf: config/gnupg/scdaemon.conf
-    ~/.config/alacritty/alacritty.toml: config/alacritty/alacritty.toml
+    ~/.config/alacritty/alacritty.toml:
+      path: config/alacritty/alacritty.toml
+      if: '[ "$(uname -s)" = Darwin ]'
     ~/.tmux.conf: config/tmux/tmux.conf
     ~/.tmux/plugins/tpm: config/tmux/plugins/tpm
     ~/.gradle/gradle.properties: config/gradle/gradle.properties
@@ -25,7 +29,11 @@
     ~/.paths: paths
     ~/.aliases: aliases
     ~/.zshrc: zshrc
-    ~/.bin/: bin/
+    ~/.bin: bin/
     ~/.gitconfig: config/git/gitconfig
     ~/.gitignore_global: config/git/gitignore_global
     ~/.ssh/config: config/ssh/config
+- link:
+    ~/.gnupg/gpg-agent.conf:
+      path: config/gnupg/gpg-agent.linux.conf
+      if: '[ "$(uname -s)" = Linux ]'

@@ -41,7 +41,9 @@ antigen bundle pip
 antigen bundle github
 antigen bundle brew
 antigen bundle command-not-found
-antigen bundle macos
+if [[ $OSTYPE == darwin* ]]; then
+  antigen bundle macos
+fi
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-history-substring-search

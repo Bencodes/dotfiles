@@ -1,19 +1,20 @@
-tap "mongodb/brew"
+tap "mongodb/brew" if OS.mac?
 
 brew "advancecomp"
 brew "antigen"
 brew "apktool"
 brew "autoconf"
 brew "automake"
-brew "aws-okta"
+# Legacy tools without Linux formulae.
+brew "aws-okta" if OS.mac?
 brew "awscli"
 brew "bash-language-server"
 brew "bazelisk"
 brew "buildifier"
 brew "buildozer"
 brew "cloc"
-brew "codex"
-brew "cursor-cli"
+brew "codex" if OS.mac?
+brew "cursor-cli" if OS.mac?
 brew "dex2jar"
 brew "docker"
 brew "dotbot"
@@ -39,25 +40,25 @@ brew "libtool"
 brew "libxmlsec1"
 brew "lua-language-server"
 brew "mkdocs"
-brew "mongodb-database-tools"
+brew "mongodb-database-tools" if OS.mac?
 brew "ncdu"
 brew "neovim"
 brew "node"
 brew "pidcat"
 brew "pinentry"
-brew "pinentry-mac"
+brew "pinentry-mac" if OS.mac?
 brew "pre-commit"
 brew "pyright"
 brew "python"
 brew "ranger"
-brew "reattach-to-user-namespace"
+brew "reattach-to-user-namespace" if OS.mac?
 brew "rename"
 brew "ripgrep"
 brew "rsync"
 brew "rust"
-brew "rustup-init"
+brew "rustup"
 brew "sk"
-brew "smali"
+brew "smali" if OS.mac?
 brew "starship"
 brew "tmux"
 brew "tree"
@@ -69,3 +70,4 @@ brew "zsh"
 brew "zsh-autosuggestions"
 brew "zsh-completions"
 brew "postgresql@17"
+brew "openjdk@21" if OS.linux?
