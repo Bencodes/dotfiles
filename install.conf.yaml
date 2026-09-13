@@ -10,7 +10,9 @@
     ~/.config/zsh/theme.zsh: config/zsh/theme.zsh
     ~/.config/ripgrep/rgrc.conf: config/ripgrep/rgrc.conf
     ~/.config/starship.toml: config/starship/starship.toml
-    ~/.config/gh/config.yml: config/gh/config.yml
+    ~/.config/gh/config.yml:
+      path: config/gh/config.yml
+      if: '[ ! -e "$HOME/.config/gh/config.yml" ] || [ -L "$HOME/.config/gh/config.yml" ]'
     ~/.gnupg/gpg-agent.conf:
       path: config/gnupg/gpg-agent.conf
       if: '[ "$(uname -s)" = Darwin ]'
