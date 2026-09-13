@@ -10,7 +10,7 @@ export COMPOSE_BAKE=true
 
 # Go
 export GOPATH=$HOME/Workspace
-export GOROOT=/opt/homebrew/opt/go/libexec
+export GOROOT="$HOMEBREW_PREFIX/opt/go/libexec"
 
 # Neovim
 export XDG_CONFIG_HOME="$HOME/.config/"
@@ -32,7 +32,11 @@ export SKIP_FORMATTING=true
 
 # Android env variables
 readonly lyft_android_sdk="$HOME/.androidbin/lyft-android-sdk/android-sdk-4333796-unarchived/"
-readonly default_android_sdk="$HOME/Library/Android/sdk/"
+if [[ $OSTYPE == darwin* ]]; then
+    readonly default_android_sdk="$HOME/Library/Android/sdk/"
+else
+    readonly default_android_sdk="$HOME/Android/Sdk/"
+fi
 if [ -d "$lyft_android_sdk" ]; then
     readonly android_sdk_root="$lyft_android_sdk"
 else

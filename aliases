@@ -45,4 +45,8 @@ alias bu='brew upgrade && brew update --all && brew cleanup && brew doctor && br
 alias bcu='brew cask doctor && brew cleanup'
 
 # Open
-alias o='open .'
+if [[ $OSTYPE == darwin* ]]; then
+  alias o='open .'
+else
+  alias o='xdg-open .'
+fi
