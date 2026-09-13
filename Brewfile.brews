@@ -52,7 +52,8 @@ brew "pyright"
 brew "python"
 brew "ranger"
 brew "reattach-to-user-namespace" if OS.mac?
-brew "rename"
+# Linux dependencies install util-linux, which also provides rename.
+brew "rename" if OS.mac?
 brew "ripgrep"
 brew "rsync"
 brew "rust"
