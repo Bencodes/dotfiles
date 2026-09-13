@@ -19,7 +19,6 @@ export XDG_CONFIG_HOME="$HOME/.config/"
 export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/rgrc.conf"
 
 # Homebrew Token
-export HOMEBREW_GITHUB_API_TOKEN="TOKEN_GOES_HERE"
 
 # Homebrew Cask Install Directory
 export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
@@ -52,8 +51,12 @@ export ANDROID_NDK="$android_sdk_root/ndk/$ndk_version"
 export SKIM_DEFAULT_COMMAND="fd"
 
 # GPG Agent
-GPG_TTY="$(tty)"
-export GPG_TTY
-SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-export SSH_AUTH_SOCK
-gpgconf --launch gpg-agent
+if [[ -t 0 ]] && command -v gpgconf >/dev/null; then
+    GPG_TTY="$(tty)"
+    export GPG_TTY
+    if [[ -z ${SSH_AUTH_SOCK:-} ]]; then
+        SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+        export SSH_AUTH_SOCK
+        gpgconf --launch gpg-agent
+    fi
+fi

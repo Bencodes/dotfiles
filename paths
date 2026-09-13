@@ -17,6 +17,7 @@ export KOTLIN_HOME="$HOMEBREW_PREFIX/opt/kotlin/"
 # Configure the paths
 paths=(
   "$HOME/.bin"                    # User
+  "$HOME/.local/bin"              # User-installed CLI tools
   "$HOMEBREW_PREFIX/bin"          # Homebrew
   /usr/local/bin
   "$CARGO_HOME/bin"               # Rust
