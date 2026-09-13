@@ -46,7 +46,7 @@ stays local and includes the shared Git settings, preserving credential helpers
 created by `gh auth setup-git`.
 
 Linux skips macOS casks, the macOS Alacritty configuration, and legacy entries
-for aws-okta, Cursor CLI, and smali that no longer have Homebrew formulae.
+for Cursor CLI and smali that no longer have Homebrew formulae.
 MongoDB database tools are also skipped because that tap ships macOS binaries.
 Install those tools separately if needed. GPG uses Homebrew's terminal pinentry;
 tmux copies to its buffer (desktop clipboard integration is handled by tmux-yank).

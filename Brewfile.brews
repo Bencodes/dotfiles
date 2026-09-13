@@ -5,8 +5,6 @@ brew "antigen"
 brew "apktool"
 brew "autoconf"
 brew "automake"
-# Legacy tools without Linux formulae.
-brew "aws-okta" if OS.mac?
 brew "awscli"
 brew "bash-language-server"
 brew "bazelisk"
@@ -14,6 +12,7 @@ brew "buildifier"
 brew "buildozer"
 brew "cloc"
 cask "codex"
+# Legacy tool without a Linux formula.
 brew "cursor-cli" if OS.mac?
 brew "dex2jar"
 brew "docker"
