@@ -11,8 +11,6 @@
     ~/.config/ripgrep/rgrc.conf: config/ripgrep/rgrc.conf
     ~/.config/starship.toml: config/starship/starship.toml
     ~/.config/gh/config.yml: config/gh/config.yml
-    ~/.config/gh/hosts.yml: config/gh/hosts.yml
-    ~/.config/hub: config/hub/config.yml
     ~/.gnupg/gpg-agent.conf:
       path: config/gnupg/gpg-agent.conf
       if: '[ "$(uname -s)" = Darwin ]'
@@ -29,8 +27,8 @@
     ~/.paths: paths
     ~/.aliases: aliases
     ~/.zshrc: zshrc
+    ~/.zprofile: zprofile
     ~/.bin: bin/
-    ~/.gitconfig: config/git/gitconfig
     ~/.gitignore_global: config/git/gitignore_global
     ~/.ssh/config: config/ssh/config
 - link:

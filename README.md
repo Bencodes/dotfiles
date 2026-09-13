@@ -35,6 +35,16 @@ Log out and back in after changing your login shell. Shell plugins are downloade
 on the first zsh startup. Install `xdg-utils` with apt if you want the `o` alias on
 a desktop, and install Android SDK tools separately under `~/Android/Sdk`.
 
+Noninteractive login shells (`zsh -lc`) load Homebrew and user CLI paths without
+starting shell plugins or GPG. Existing SSH agents and environment-provided
+Homebrew tokens are preserved; the token placeholder remains the default.
+
+Authenticate GitHub CLI with `gh auth login`. GitHub CLI and Hub authentication
+files stay local instead of being linked into this repository. On reinstall,
+existing auth symlinks are replaced with private local copies. `~/.gitconfig` also
+stays local and includes the shared Git settings, preserving credential helpers
+created by `gh auth setup-git`.
+
 Linux skips macOS casks, the macOS Alacritty configuration, and legacy entries
 for aws-okta, Cursor CLI, and smali that no longer have Homebrew formulae.
 MongoDB database tools are also skipped because that tap ships macOS binaries.
