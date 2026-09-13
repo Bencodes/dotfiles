@@ -1,4 +1,4 @@
-tap "mongodb/brew"
+tap "mongodb/brew" if OS.mac?
 
 brew "advancecomp"
 brew "antigen"
@@ -40,7 +40,7 @@ brew "libtool"
 brew "libxmlsec1"
 brew "lua-language-server"
 brew "mkdocs"
-brew "mongodb-database-tools"
+brew "mongodb-database-tools" if OS.mac?
 brew "ncdu"
 brew "neovim"
 brew "node"
