@@ -16,8 +16,9 @@ git clone https://github.com/Bencodes/dotfiles.git ~/dotfiles
 exec zsh
 ```
 
-Homebrew manages the CLI tools, including zsh and Java 21. Its supported Linux
-prefix is `/home/linuxbrew/.linuxbrew`; see the
+Homebrew manages the CLI tools, including zsh, Java 21, and the Codex CLI cask.
+The shared CLI Brewfile installs Codex on both macOS and Linux. Homebrew's supported
+Linux prefix is `/home/linuxbrew/.linuxbrew`; see the
 [Homebrew Linux instructions](https://docs.brew.sh/Homebrew-on-Linux).
 The installer can also find an existing Homebrew installation on `PATH`.
 The trust command allows Homebrew to load the third-party git-pile tap already
@@ -35,7 +36,7 @@ on the first zsh startup. Install `xdg-utils` with apt if you want the `o` alias
 a desktop, and install Android SDK tools separately under `~/Android/Sdk`.
 
 Linux skips macOS casks, the macOS Alacritty configuration, and legacy entries
-for aws-okta, Codex, Cursor CLI, and smali that no longer have Homebrew formulae.
+for aws-okta, Cursor CLI, and smali that no longer have Homebrew formulae.
 MongoDB database tools are also skipped because that tap ships macOS binaries.
 Install those tools separately if needed. GPG uses Homebrew's terminal pinentry;
 tmux copies to its buffer (desktop clipboard integration is handled by tmux-yank).
