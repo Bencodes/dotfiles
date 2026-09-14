@@ -40,3 +40,6 @@ for search_path in "${paths[@]}"; do
 done
 
 export PATH="$new_path"
+
+# shellcheck source=config/android/env.sh
+source "$HOME/.config/android/env.sh"

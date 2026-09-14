@@ -2,6 +2,7 @@ tap "mongodb/brew" if OS.mac?
 
 brew "advancecomp"
 brew "antigen"
+cask "android-commandlinetools"
 brew "apktool"
 brew "autoconf"
 brew "automake"

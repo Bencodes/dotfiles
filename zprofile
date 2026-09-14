@@ -11,3 +11,5 @@ else
   done
 fi
 export PATH="$HOME/.local/bin:$HOME/.bin:$PATH"
+
+source "$HOME/.config/android/env.sh"
