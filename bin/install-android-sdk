@@ -39,7 +39,7 @@ fi
 
 # Fresh login shells may not have loaded the interactive Java configuration.
 if [[ -z ${JAVA_HOME:-} ]] && command -v brew >/dev/null; then
-  java_prefix="$(brew --prefix)/opt/openjdk@21"
+  java_prefix="$(brew --prefix)/opt/openjdk@25"
   if [[ -d "$java_prefix" ]]; then
     if [[ $OSTYPE == darwin* ]]; then
       export JAVA_HOME="$java_prefix/libexec/openjdk.jdk/Contents/Home"

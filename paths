@@ -5,14 +5,11 @@ export CARGO_HOME="$HOME/.cargo"
 
 # Java
 if [[ $OSTYPE == darwin* ]]; then
-  JAVA_HOME="$(/usr/libexec/java_home -v 21)"
+  JAVA_HOME="$HOMEBREW_PREFIX/opt/openjdk@25/libexec/openjdk.jdk/Contents/Home"
 else
-  JAVA_HOME="$HOMEBREW_PREFIX/opt/openjdk@21/libexec"
+  JAVA_HOME="$HOMEBREW_PREFIX/opt/openjdk@25/libexec"
 fi
 export JAVA_HOME
-
-# Kotlin
-export KOTLIN_HOME="$HOMEBREW_PREFIX/opt/kotlin/"
 
 # Configure the paths
 paths=(

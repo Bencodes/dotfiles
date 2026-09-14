@@ -15,7 +15,7 @@ git clone https://github.com/Bencodes/dotfiles.git ~/dotfiles
 exec zsh
 ```
 
-Homebrew manages the CLI tools, including zsh, Java 21, and the Codex CLI cask.
+Homebrew manages the CLI tools, including zsh, Java 25, and the Codex CLI cask.
 The shared CLI Brewfile installs Codex on both macOS and Linux. Homebrew's supported
 Linux prefix is `/home/linuxbrew/.linuxbrew`; see the
 [Homebrew Linux instructions](https://docs.brew.sh/Homebrew-on-Linux).
@@ -81,7 +81,10 @@ Set `ANDROID_HOME` before shell startup to use another SDK directory. Both login
 and interactive shells expose the SDK variables and platform-tools on `PATH`.
 NDKs are optional and installed side by side; set `ANDROID_NDK_VERSION` to expose
 the selected version through `ANDROID_NDK_HOME` and `ANDROID_NDK` for older tools.
-The helper requires Java; the dotfiles already install Java 21.
+The helper requires Java; the dotfiles already install Java 25. The base setup
+does not install the standalone Kotlin compiler; Neovim manages its Kotlin
+language server through Mason, and the compiler can be added separately when a
+project needs it.
 
 References: [Homebrew cask](https://formulae.brew.sh/cask/android-commandlinetools),
 [SDK package manager](https://developer.android.com/tools/sdkmanager).
