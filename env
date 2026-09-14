@@ -31,17 +31,12 @@ export HOMEBREW_NO_ANALYTICS=1
 export SKIP_FORMATTING=true
 
 # Android env variables
-readonly lyft_android_sdk="$HOME/.androidbin/lyft-android-sdk/android-sdk-4333796-unarchived/"
 if [[ $OSTYPE == darwin* ]]; then
     readonly default_android_sdk="$HOME/Library/Android/sdk/"
 else
     readonly default_android_sdk="$HOME/Android/Sdk/"
 fi
-if [ -d "$lyft_android_sdk" ]; then
-    readonly android_sdk_root="$lyft_android_sdk"
-else
-    readonly android_sdk_root="$default_android_sdk"
-fi
+readonly android_sdk_root="$default_android_sdk"
 
 readonly ndk_version="21.4.7075529"
 export ANDROID_HOME="$android_sdk_root"
