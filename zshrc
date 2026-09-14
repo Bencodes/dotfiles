@@ -23,10 +23,5 @@ source ~/.aliases
 source ~/.completions
 source ~/.config/zsh/init.zsh
 
-# Optionally load zshlyftrc
-if [ -f ~/.zshlyftrc ]; then
-  source ~/.zshlyftrc
-fi
-
 # Init starship
 eval "$(starship init zsh)"
