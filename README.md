@@ -82,9 +82,7 @@ and interactive shells expose the SDK variables and platform-tools on `PATH`.
 NDKs are optional and installed side by side; set `ANDROID_NDK_VERSION` to expose
 the selected version through `ANDROID_NDK_HOME` and `ANDROID_NDK` for older tools.
 The helper requires Java; the dotfiles already install Java 25. The base setup
-does not install the standalone Kotlin compiler; Neovim manages its Kotlin
-language server through Mason, and the compiler can be added separately when a
-project needs it.
+also installs the standalone Kotlin compiler and Kotlin language server.
 
 References: [Homebrew cask](https://formulae.brew.sh/cask/android-commandlinetools),
 [SDK package manager](https://developer.android.com/tools/sdkmanager).

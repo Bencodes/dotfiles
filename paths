@@ -11,6 +11,9 @@ else
 fi
 export JAVA_HOME
 
+# Kotlin
+export KOTLIN_HOME="$HOMEBREW_PREFIX/opt/kotlin/"
+
 # Configure the paths
 paths=(
   "$HOME/.bin"                    # User
