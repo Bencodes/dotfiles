@@ -10,7 +10,6 @@ sudo apt-get install -y build-essential procps curl file git ca-certificates
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export XDG_CONFIG_HOME="$HOME/.config"
-brew trust keith/formulae
 git clone https://github.com/Bencodes/dotfiles.git ~/dotfiles
 ~/dotfiles/install.sh
 exec zsh
@@ -21,8 +20,10 @@ The shared CLI Brewfile installs Codex on both macOS and Linux. Homebrew's suppo
 Linux prefix is `/home/linuxbrew/.linuxbrew`; see the
 [Homebrew Linux instructions](https://docs.brew.sh/Homebrew-on-Linux).
 The installer can also find an existing Homebrew installation on `PATH`.
-The trust command allows Homebrew to load the third-party git-pile tap already
-used by this repository.
+Trusted third-party formulae are declared with `trusted: true` in `Brewfile.brews`.
+Homebrew provisions that trust before installing them: git-pile on both platforms
+and MongoDB database tools on macOS. Add the same option to a fully qualified
+formula or cask entry to trust another package without trusting its entire tap.
 
 To make zsh your login shell:
 

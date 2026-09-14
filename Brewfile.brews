@@ -23,7 +23,7 @@ brew "fzf"
 brew "kubernetes-cli"
 brew "git"
 brew "gh"
-brew "keith/formulae/git-pile"
+brew "keith/formulae/git-pile", trusted: true
 brew "gnupg"
 brew "go"
 brew "graphviz"
@@ -40,7 +40,7 @@ brew "libtool"
 brew "libxmlsec1"
 brew "lua-language-server"
 brew "mkdocs"
-brew "mongodb-database-tools" if OS.mac?
+brew "mongodb/brew/mongodb-database-tools", trusted: true if OS.mac?
 brew "ncdu"
 brew "neovim"
 brew "node"
