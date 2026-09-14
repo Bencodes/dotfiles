@@ -62,6 +62,7 @@ brew "rsync"
 brew "rust"
 brew "rustup"
 brew "sk"
+brew "skaffold"
 brew "smali" if OS.mac?
 brew "starship"
 brew "tmux"
