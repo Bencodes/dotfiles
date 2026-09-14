@@ -1,5 +1,5 @@
 tap "mongodb/brew" if OS.mac?
-tap "buildkite/buildkite" if OS.mac?
+tap "buildkite/buildkite"
 
 brew "advancecomp"
 brew "antigen"
@@ -12,7 +12,7 @@ brew "bash-language-server"
 brew "bazelisk"
 brew "buildifier"
 brew "buildozer"
-brew "buildkite/buildkite/bk@3", trusted: true if OS.mac?
+brew "buildkite/buildkite/bk@3", trusted: true
 brew "cloc"
 cask "codex"
 # Legacy tool without a Linux formula.
