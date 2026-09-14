@@ -72,4 +72,4 @@ brew "zsh"
 brew "zsh-autosuggestions"
 brew "zsh-completions"
 brew "postgresql@17"
-brew "openjdk@21" if OS.linux?
+brew "openjdk@25"

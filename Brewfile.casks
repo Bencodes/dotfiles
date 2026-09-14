@@ -1,10 +1,5 @@
 cask_args appdir: "~/Applications"
 
-cask "zulu@11"
-cask "zulu@17"
-cask "zulu@21"
-cask "zulu@24"
-
 cask "1password", args: { appdir: "/Applications" }
 cask "firefox", args: { appdir: "/Applications" }
 cask "viscosity", args: { appdir: "/Applications" }
