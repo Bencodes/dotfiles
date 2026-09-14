@@ -8,7 +8,6 @@ cask "micro-snitch", args: { appdir: "/Applications" }
 cask "alacritty"
 cask "codex-app"
 cask "cursor"
-cask "docker"
 cask "slack"
 cask "discord"
 cask "telegram"
