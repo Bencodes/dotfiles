@@ -5,6 +5,7 @@
       force: true
 - clean: ["~", "~/.config", "~/.tmux", "~/.bin"]
 - link:
+    ~/.config/android/env.sh: config/android/env.sh
     ~/.config/nvim/init.lua: config/nvim/init.lua
     ~/.config/nvim/lua: config/nvim/lua
     ~/.config/zsh/init.zsh: config/zsh/init.zsh

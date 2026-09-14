@@ -34,7 +34,7 @@ chsh -s "$(command -v zsh)"
 
 Log out and back in after changing your login shell. Shell plugins are downloaded
 on the first zsh startup. Install `xdg-utils` with apt if you want the `o` alias on
-a desktop, and install Android SDK tools separately under `~/Android/Sdk`.
+a desktop. To provision the Android SDK, see below.
 
 Noninteractive login shells (`zsh -lc`) load Homebrew and user CLI paths without
 starting shell plugins or GPG. Existing SSH agents and environment-provided
@@ -57,3 +57,31 @@ tmux copies to its buffer (desktop clipboard integration is handled by tmux-yank
 Install [Homebrew](https://brew.sh), then run `./install.sh`. Both the CLI Brewfile
 and the cask Brewfile are installed. Some legacy package names may need updating
 for a fresh install.
+
+## Android SDK
+
+After installing the dotfiles, run `install-android-sdk` and accept Google's
+license prompts. Homebrew supplies `android-commandlinetools` on Linux and macOS;
+the helper also installs that cask if it is missing. SDK packages are installed
+with Google's `sdkmanager` into `~/Android/Sdk` on Linux or
+`~/Library/Android/sdk` on macOS, matching Android Studio's defaults.
+
+The default packages are platform-tools (`adb`, `fastboot`), API 36, build-tools
+36.0.0, and API 36 sources. Installing command-line tools alone does not install
+API platforms, which causes Bazel's "No Android SDK apis found" error.
+Re-running the helper is safe; existing SDK packages are retained.
+
+Pass explicit package IDs to install project-specific versions instead:
+
+```sh
+install-android-sdk 'platforms;android-35' 'build-tools;35.0.0' 'ndk;27.2.12479018'
+```
+
+Set `ANDROID_HOME` before shell startup to use another SDK directory. Both login
+and interactive shells expose the SDK variables and platform-tools on `PATH`.
+NDKs are optional and installed side by side; set `ANDROID_NDK_VERSION` to expose
+the selected version through `ANDROID_NDK_HOME` and `ANDROID_NDK` for older tools.
+The helper requires Java; the dotfiles already install Java 21.
+
+References: [Homebrew cask](https://formulae.brew.sh/cask/android-commandlinetools),
+[SDK package manager](https://developer.android.com/tools/sdkmanager).

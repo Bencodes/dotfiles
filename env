@@ -30,18 +30,7 @@ export HOMEBREW_NO_ANALYTICS=1
 # Skip auto formatting
 export SKIP_FORMATTING=true
 
-# Android env variables
-if [[ $OSTYPE == darwin* ]]; then
-    readonly default_android_sdk="$HOME/Library/Android/sdk/"
-else
-    readonly default_android_sdk="$HOME/Android/Sdk/"
-fi
-readonly android_sdk_root="$default_android_sdk"
-
-readonly ndk_version="21.4.7075529"
-export ANDROID_HOME="$android_sdk_root"
-export ANDROID_NDK_HOME="$android_sdk_root/ndk/$ndk_version"
-export ANDROID_NDK="$android_sdk_root/ndk/$ndk_version"
+# Android paths are initialized by ~/.paths, before interactive shell setup.
 
 # Skim https://github.com/lotabout/skim
 export SKIM_DEFAULT_COMMAND="fd"
