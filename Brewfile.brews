@@ -1,5 +1,4 @@
 tap "mongodb/brew" if OS.mac?
-tap "buildkite/buildkite"
 
 brew "advancecomp"
 brew "antigen"
