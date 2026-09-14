@@ -14,11 +14,13 @@ brew "buildifier"
 brew "buildozer"
 brew "buildkite/buildkite/bk@3", trusted: true
 brew "cloc"
+brew "colima" if OS.mac?
 cask "codex"
 # Legacy tool without a Linux formula.
 brew "cursor-cli" if OS.mac?
 brew "dex2jar"
 brew "docker"
+brew "docker-engine" if OS.linux?
 brew "dotbot"
 brew "fd"
 brew "fswatch"
