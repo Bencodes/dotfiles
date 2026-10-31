@@ -31,6 +31,11 @@ else
   brew bundle --file="$project_dir/Brewfile.brews"
 fi
 
+# Disable Skaffold usage reporting while preserving its other settings.
+if command -v skaffold >/dev/null; then
+  skaffold config set --global collect-metrics false
+fi
+
 # Keep machine-local settings and authentication writes out of linked files.
 for auth_file in "$HOME/.gitconfig" "$HOME/.config/gh/hosts.yml" "$HOME/.config/hub"; do
   if [[ -L "$auth_file" ]]; then
