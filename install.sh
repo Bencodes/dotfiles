@@ -31,11 +31,6 @@ else
   brew bundle --file="$project_dir/Brewfile.brews"
 fi
 
-# Disable Codex metrics without linking machine-local configuration.
-if command -v codex >/dev/null; then
-  python3 "$project_dir/config/codex/disable-telemetry.py"
-fi
-
 # Keep machine-local settings and authentication writes out of linked files.
 for auth_file in "$HOME/.gitconfig" "$HOME/.config/gh/hosts.yml" "$HOME/.config/hub"; do
   if [[ -L "$auth_file" ]]; then
@@ -51,6 +46,11 @@ if ! git config --file "$HOME/.gitconfig" --get-all include.path | grep -Fxq "$p
   git config --file "$HOME/.gitconfig" --add include.path "$project_dir/config/git/gitconfig"
 fi
 chmod 600 "$HOME/.gitconfig"
+
+# Disable Codex metrics without linking machine-local configuration.
+if command -v codex >/dev/null; then
+  python3 "$project_dir/config/codex/disable-telemetry.py"
+fi
 
 # Link up the dot files
 dotbot -d "$project_dir" \
