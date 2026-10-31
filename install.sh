@@ -27,6 +27,14 @@ if [[ $(uname -s) == Darwin ]]; then
   # Preserve the existing best-effort macOS package installation.
   brew bundle --file="$project_dir/Brewfile.brews" || true
   brew bundle --file="$project_dir/Brewfile.casks" || true
+
+  # Apply Firefox opt-outs to every profile through per-user macOS policies.
+  defaults write org.mozilla.firefox EnterprisePoliciesEnabled -bool true
+  defaults write org.mozilla.firefox DisableTelemetry -bool true
+  defaults write org.mozilla.firefox DisableFirefoxStudies -bool true
+  defaults write org.mozilla.firefox Preferences -dict-add \
+    browser.crashReports.unsubmittedCheck.autoSubmit2 \
+    '<dict><key>Value</key><false/><key>Status</key><string>locked</string></dict>'
 else
   brew bundle --file="$project_dir/Brewfile.brews"
 fi
