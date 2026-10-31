@@ -41,6 +41,12 @@ for auth_file in "$HOME/.gitconfig" "$HOME/.config/gh/hosts.yml" "$HOME/.config/
   fi
 done
 
+# Preserve Toolbox settings while disabling anonymous usage reporting.
+if [[ $(uname -s) == Darwin ]]; then
+  python3 "$project_dir/config/jetbrains-toolbox/disable-telemetry.py" \
+    "$HOME/Library/Application Support/JetBrains/Toolbox/.settings.json"
+fi
+
 # Preserve local credential helpers while loading the shared Git preferences.
 if ! git config --file "$HOME/.gitconfig" --get-all include.path | grep -Fxq "$project_dir/config/git/gitconfig"; then
   git config --file "$HOME/.gitconfig" --add include.path "$project_dir/config/git/gitconfig"
