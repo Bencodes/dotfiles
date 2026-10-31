@@ -27,6 +27,9 @@ export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
 # No homebrew analytics
 export HOMEBREW_NO_ANALYTICS=1
 
+# Disable Buildkite CLI telemetry
+export BK_TELEMETRY=false
+
 # Skip auto formatting
 export SKIP_FORMATTING=true
 
