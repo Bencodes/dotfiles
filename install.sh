@@ -5,6 +5,12 @@ set -euo pipefail
 project_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 readonly project_dir
 
+# Disable VS Code telemetry without replacing either edition's user settings.
+if [[ $(uname -s) == Darwin ]]; then
+  defaults write com.microsoft.VSCode TelemetryLevel -string off
+  defaults write com.microsoft.VSCodeInsiders TelemetryLevel -string off
+fi
+
 # Find Homebrew even before the shell dotfiles have been linked.
 if ! command -v brew &> /dev/null; then
   for prefix in /home/linuxbrew/.linuxbrew /opt/homebrew /usr/local; do
