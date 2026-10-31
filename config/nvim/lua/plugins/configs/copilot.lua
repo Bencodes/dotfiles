@@ -5,6 +5,13 @@ if not ok then
 end
 
 copilot.setup({
+	server_opts_overrides = {
+		settings = {
+			telemetry = {
+				telemetryLevel = "off",
+			},
+		},
+	},
 	panel = {
 		enabled = false,
 	},
