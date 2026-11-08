@@ -13,6 +13,7 @@
     ~/.config/ripgrep/rgrc.conf: config/ripgrep/rgrc.conf
     ~/.config/starship.toml: config/starship/starship.toml
     ~/.config/gh/config.yml: config/gh/config.yml
+    ~/.claude/settings.json: config/claude/settings.json
     ~/.gnupg/gpg-agent.conf:
       path: config/gnupg/gpg-agent.conf
       if: '[ "$(uname -s)" = Darwin ]'
